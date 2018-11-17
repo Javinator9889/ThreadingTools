@@ -20,7 +20,9 @@ package com.github.javinator9889.threading.pools;
  */
 
 import com.github.javinator9889.threading.pools.rejectedhandlers.DefaultRejectedExecutionHandler;
+import com.github.javinator9889.threading.pools.rejectedhandlers.ImmediatelyRunOnRejectedExecutionHandler;
 import com.github.javinator9889.threading.pools.rejectedhandlers.NoRejectedExecutionHandler;
+import com.github.javinator9889.threading.pools.rejectedhandlers.RunWhenTasksFinishedOnRejectedHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -34,10 +36,14 @@ public class ThreadsPooling {
     public static final long DEFAULT_KEEP_ALIVE = 100;
     public static final TimeUnit DEFAULT_TIME_UNIT = TimeUnit.MILLISECONDS;
     public static final int DEFAULT_QUEUE_CAPACITY = 100;
-    public static final DefaultRejectedExecutionHandler DEFAULT_REJECTED_EXECUTION_HANDLER =
+    public static final RejectedExecutionHandler DEFAULT_REJECTED_EXECUTION_HANDLER =
             new DefaultRejectedExecutionHandler();
-    public static final NoRejectedExecutionHandler NO_ACTION_ON_REJECTED_HANDLER =
+    public static final RejectedExecutionHandler NO_ACTION_ON_REJECTED_HANDLER =
             new NoRejectedExecutionHandler();
+    public static final RejectedExecutionHandler IMMEDIATELY_RUN_ON_REJECTED_HANDLER =
+            new ImmediatelyRunOnRejectedExecutionHandler();
+    public static final RejectedExecutionHandler WAIT_SHUTDOWN_RUN_TASK_ON_REJECTED_HANDLER =
+            new RunWhenTasksFinishedOnRejectedHandler(10000, TimeUnit.MILLISECONDS);
 
     private ThreadPoolExecutor mPoolExecutor;
     private BlockingQueue<Runnable> mWorkingThreadsQueue;
@@ -203,6 +209,26 @@ public class ThreadsPooling {
         return mPoolExecutor.getThreadFactory();
     }
 
+    public BlockingQueue<Runnable> getWorkingThreadsQueue() {
+        return mWorkingThreadsQueue;
+    }
+
+    public long getCompletedThreadCount() {
+        return mPoolExecutor.getCompletedTaskCount();
+    }
+
+    public int getLargestActiveThreadsRunning() {
+        return mPoolExecutor.getLargestPoolSize();
+    }
+
+    public long getThreadCount() {
+        return mPoolExecutor.getTaskCount();
+    }
+
+    public int getPoolSize() {
+        return mPoolExecutor.getPoolSize();
+    }
+
     public Builder builder() {
         return new Builder();
     }
@@ -352,6 +378,21 @@ public class ThreadsPooling {
             return this;
         }
 
+        public Builder withNoActionOnTaskRejected() {
+            mRejectedExecutionHandler = NO_ACTION_ON_REJECTED_HANDLER;
+            return this;
+        }
+
+        public Builder withImmediatelyRunRejectedTask() {
+            mRejectedExecutionHandler = IMMEDIATELY_RUN_ON_REJECTED_HANDLER;
+            return this;
+        }
+
+        public Builder withRunningTaskWhenAllCompleted() {
+            mRejectedExecutionHandler = WAIT_SHUTDOWN_RUN_TASK_ON_REJECTED_HANDLER;
+            return this;
+        }
+
         public ThreadsPooling build() {
             if (mWorkingThreadsQueue == null)
                 mWorkingThreadsQueue = new LinkedBlockingQueue<>(mQueueCapacity);
@@ -397,7 +438,7 @@ public class ThreadsPooling {
 
         private IllegalArgumentException illegalArgumentException(String valueName,
                                                                   long valueContent) {
-            return new IllegalArgumentException(String.format("%s time must be zero or" +
+            return new IllegalArgumentException(String.format("%s must be zero or" +
                     " higher, not '%d'", valueName, valueContent));
         }
     }
