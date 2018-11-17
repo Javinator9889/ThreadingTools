@@ -1,5 +1,3 @@
-package com.github.javinator9889.threading.threads.notifyingthread;
-
 /*
  * Copyright © 2018 - present | ThreadingTools by Javinator9889
  *
@@ -18,6 +16,8 @@ package com.github.javinator9889.threading.threads.notifyingthread;
  *
  * Created by Javinator9889 on 15/11/2018 - ThreadingTools.
  */
+
+package com.github.javinator9889.threading.threads.notifyingthread;
 
 import com.google.common.util.concurrent.AtomicDouble;
 import org.jetbrains.annotations.NotNull;
@@ -463,7 +463,8 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
      *                           thread group
      * @since 9
      */
-    public NotifyingThread(ThreadGroup group, Runnable target, String name, long stackSize, boolean inheritThreadLocals) {
+    public NotifyingThread(ThreadGroup group, Runnable target, String name, long stackSize,
+                           boolean inheritThreadLocals) {
         super(group, target, name, stackSize, inheritThreadLocals);
         mSubscribedClasses = new ArrayList<>(DEFAULT_CAPACITY);
         mTarget = target;

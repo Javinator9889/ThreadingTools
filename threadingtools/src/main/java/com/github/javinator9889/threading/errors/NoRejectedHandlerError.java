@@ -1,5 +1,3 @@
-package com.github.javinator9889.threading.errors;
-
 /*
  * Copyright © 2018 - present | ThreadingTools by Javinator9889
  *
@@ -18,6 +16,8 @@ package com.github.javinator9889.threading.errors;
  *
  * Created by Javinator9889 on 16/11/2018 - ThreadingTools.
  */
+
+package com.github.javinator9889.threading.errors;
 
 import java.util.concurrent.RejectedExecutionException;
 

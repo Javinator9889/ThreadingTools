@@ -1,5 +1,3 @@
-package com.github.javinator9889.threading.pools;
-
 /*
  * Copyright © 2018 - present | ThreadingTools by Javinator9889
  *
@@ -18,6 +16,8 @@ package com.github.javinator9889.threading.pools;
  *
  * Created by Javinator9889 on 15/11/2018 - ThreadingTools.
  */
+
+package com.github.javinator9889.threading.pools;
 
 import com.github.javinator9889.threading.pools.rejectedhandlers.DefaultRejectedExecutionHandler;
 import com.github.javinator9889.threading.pools.rejectedhandlers.ImmediatelyRunOnRejectedExecutionHandler;
