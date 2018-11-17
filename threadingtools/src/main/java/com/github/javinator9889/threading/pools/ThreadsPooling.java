@@ -138,6 +138,71 @@ public class ThreadsPooling {
         return mPoolExecutor.shutdownNow();
     }
 
+    public void updateConcurrentThreadsRunning(int newAmountOfThreadsRunning) {
+        if (newAmountOfThreadsRunning < 0)
+            return;
+        else if (newAmountOfThreadsRunning == 0)
+            newAmountOfThreadsRunning = DEFAULT_CORE_THREADS;
+        if (newAmountOfThreadsRunning != mPoolExecutor.getCorePoolSize())
+            mPoolExecutor.setCorePoolSize(newAmountOfThreadsRunning);
+    }
+
+    public void updateMaximumActiveThreads(int newMaximumActiveThreads) {
+        if (newMaximumActiveThreads < 0)
+            return;
+        else if (newMaximumActiveThreads == 0)
+            newMaximumActiveThreads = DEFAULT_MAX_THREADS;
+        if (newMaximumActiveThreads != mPoolExecutor.getMaximumPoolSize())
+            mPoolExecutor.setMaximumPoolSize(newMaximumActiveThreads);
+    }
+
+    public void updateKeepAliveTime(long newKeepAliveTime) {
+        updateKeepAliveTime(newKeepAliveTime, DEFAULT_TIME_UNIT);
+    }
+
+    public void updateKeepAliveTime(long newKeepAliveTime, @NotNull TimeUnit newTimeUnit) {
+        mPoolExecutor.setKeepAliveTime(newKeepAliveTime, newTimeUnit);
+    }
+
+    public void updateRejectedExecutionHandler(@Nullable RejectedExecutionHandler newHandler) {
+        if (newHandler == null)
+            mPoolExecutor.setRejectedExecutionHandler(DEFAULT_REJECTED_EXECUTION_HANDLER);
+        else
+            mPoolExecutor.setRejectedExecutionHandler(newHandler);
+    }
+
+    public void updateThreadFactory(@NotNull ThreadFactory newThreadFactory) {
+        mPoolExecutor.setThreadFactory(newThreadFactory);
+    }
+
+    public int getConcurrentThreadsRunning() {
+        return mPoolExecutor.getCorePoolSize();
+    }
+
+    public int getMaximumThreadsRunning() {
+        return mPoolExecutor.getMaximumPoolSize();
+    }
+
+    public int getActiveThreadsCount() {
+        return mPoolExecutor.getActiveCount();
+    }
+
+    public long getKeepAliveTime() {
+        return getKeepAliveTimeWithUnit(DEFAULT_TIME_UNIT);
+    }
+
+    public long getKeepAliveTimeWithUnit(@NotNull TimeUnit unit) {
+        return mPoolExecutor.getKeepAliveTime(unit);
+    }
+
+    public RejectedExecutionHandler getRejectedExecutionHandler() {
+        return mPoolExecutor.getRejectedExecutionHandler();
+    }
+
+    public ThreadFactory getThreadFactory() {
+        return mPoolExecutor.getThreadFactory();
+    }
+
     public Builder builder() {
         return new Builder();
     }
