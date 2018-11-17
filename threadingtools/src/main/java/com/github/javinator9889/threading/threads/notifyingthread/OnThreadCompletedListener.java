@@ -22,6 +22,6 @@ package com.github.javinator9889.threading.threads.notifyingthread;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public interface OnThreadCompleteListener {
-    void onThreadCompleteListener(@NotNull final Runnable thread, @Nullable Throwable exception);
+public interface OnThreadCompletedListener {
+    void onThreadCompletedListener(@NotNull final Runnable thread, @Nullable Throwable exception);
 }
