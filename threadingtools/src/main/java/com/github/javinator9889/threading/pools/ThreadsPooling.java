@@ -19,10 +19,13 @@ package com.github.javinator9889.threading.pools;
  * Created by Javinator9889 on 15/11/2018 - ThreadingTools.
  */
 
+import com.github.javinator9889.threading.pools.rejectedhandlers.DefaultRejectedExecutionHandler;
+import com.github.javinator9889.threading.pools.rejectedhandlers.NoRejectedExecutionHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.*;
 
 public class ThreadsPooling {
@@ -38,6 +41,7 @@ public class ThreadsPooling {
 
     private ThreadPoolExecutor mPoolExecutor;
     private BlockingQueue<Runnable> mWorkingThreadsQueue;
+    private RejectedExecutionHandler mRejectedExecutionHandler;
 
     private ThreadsPooling(int coreThreads, int maximumPoolSize, long keepAliveTime,
                            TimeUnit timeUnit, BlockingQueue<Runnable> workingThreadsQueue) {
@@ -65,6 +69,7 @@ public class ThreadsPooling {
                            TimeUnit timeUnit, BlockingQueue<Runnable> workingThreadsQueue,
                            RejectedExecutionHandler rejectedExecutionHandler) {
         mWorkingThreadsQueue = workingThreadsQueue;
+        mRejectedExecutionHandler = rejectedExecutionHandler;
         mPoolExecutor = new ThreadPoolExecutor(coreThreads,
                 maximumPoolSize,
                 keepAliveTime,
@@ -78,6 +83,7 @@ public class ThreadsPooling {
                            ThreadFactory factory,
                            RejectedExecutionHandler rejectedExecutionHandler) {
         mWorkingThreadsQueue = workingThreadsQueue;
+        mRejectedExecutionHandler = rejectedExecutionHandler;
         mPoolExecutor = new ThreadPoolExecutor(coreThreads,
                 maximumPoolSize,
                 keepAliveTime,
@@ -85,6 +91,51 @@ public class ThreadsPooling {
                 workingThreadsQueue,
                 factory,
                 rejectedExecutionHandler);
+    }
+
+    public void add(@NotNull Runnable thread) {
+        try {
+            mWorkingThreadsQueue.add(thread);
+        } catch (IllegalStateException | ClassCastException | NullPointerException |
+                IllegalArgumentException ignored) {
+            mRejectedExecutionHandler.rejectedExecution(thread, mPoolExecutor);
+        }
+    }
+
+    public void add(@NotNull Runnable... threads) {
+        int sizeBeforeAddingTheElements = mWorkingThreadsQueue.size();
+        int remainingCapacity = mWorkingThreadsQueue.remainingCapacity();
+        try {
+            mWorkingThreadsQueue.addAll(Arrays.asList(threads));
+        } catch (IllegalStateException | ClassCastException | NullPointerException |
+                IllegalArgumentException | UnsupportedOperationException ignored) {
+            int threadNotAdded = remainingCapacity - sizeBeforeAddingTheElements;
+            if (threadNotAdded >= threads.length)
+                threadNotAdded = 0;
+            mRejectedExecutionHandler.rejectedExecution(threads[threadNotAdded], mPoolExecutor);
+        }
+    }
+
+    public int start() {
+        return mPoolExecutor.prestartAllCoreThreads();
+    }
+
+    public boolean shutdownWaitTermination() throws InterruptedException {
+        return shutdownWaitTermination(100, TimeUnit.MILLISECONDS);
+    }
+
+    public boolean shutdownWaitTermination(long timeout, @NotNull TimeUnit waitingUnit)
+            throws InterruptedException {
+        mPoolExecutor.shutdown();
+        return mPoolExecutor.awaitTermination(timeout, waitingUnit);
+    }
+
+    public void shutdownNotWaiting() {
+        mPoolExecutor.shutdown();
+    }
+
+    public List<Runnable> shutdownImmediately() {
+        return mPoolExecutor.shutdownNow();
     }
 
     public Builder builder() {

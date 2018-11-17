@@ -1,4 +1,4 @@
-package com.github.javinator9889.threading.pools;
+package com.github.javinator9889.threading.pools.rejectedhandlers;
 
 /*
  * Copyright © 2018 - present | ThreadingTools by Javinator9889
