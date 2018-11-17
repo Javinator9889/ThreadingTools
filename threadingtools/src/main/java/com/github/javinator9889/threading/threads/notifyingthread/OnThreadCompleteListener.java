@@ -1,4 +1,4 @@
-package com.github.javinator9889.threading.threads;
+package com.github.javinator9889.threading.threads.notifyingthread;
 
 /*
  * Copyright © 2018 - present | ThreadingTools by Javinator9889
@@ -16,8 +16,12 @@ package com.github.javinator9889.threading.threads;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see https://www.gnu.org/licenses/.
  *
- * Created by Javinator9889 on 15/11/2018 - ThreadingTools.
+ * Created by Javinator9889 on 17/11/2018 - ThreadingTools.
  */
 
-public class NotifyingThread {
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+public interface OnThreadCompleteListener {
+    void onThreadCompleteListener(@NotNull final Runnable thread, @Nullable Throwable exception);
 }
