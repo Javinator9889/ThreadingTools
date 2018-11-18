@@ -19,6 +19,7 @@
 
 package com.github.javinator9889.threading.threads.notifyingthread;
 
+import com.github.javinator9889.utils.ArgumentParser;
 import com.google.common.util.concurrent.AtomicDouble;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -85,7 +86,8 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
      * @param target the object whose {@code run} method is invoked when this thread is started. If
      *               {@code null}, this classes {@code run} method does nothing.
      */
-    public NotifyingThread(Runnable target, @NotNull OnThreadCompletedListener... listeners) {
+    public NotifyingThread(Runnable target,
+                           @NotNull OnThreadCompletedListener... listeners) {
         this(null, target, THREAD_PREFIX + nextThreadNumber(), listeners);
     }
 
@@ -106,7 +108,8 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
      * @throws SecurityException if the current thread cannot create a thread in the specified
      *                           thread group
      */
-    public NotifyingThread(@Nullable ThreadGroup group, Runnable target) {
+    public NotifyingThread(@Nullable ThreadGroup group,
+                           Runnable target) {
         this(group, target, THREAD_PREFIX + nextThreadNumber());
     }
 
@@ -128,7 +131,8 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
      * @throws SecurityException if the current thread cannot create a thread in the specified
      *                           thread group
      */
-    public NotifyingThread(@Nullable ThreadGroup group, Runnable target,
+    public NotifyingThread(@Nullable ThreadGroup group,
+                           Runnable target,
                            @NotNull OnThreadCompletedListener... listeners) {
         this(group, target, THREAD_PREFIX + nextThreadNumber(), listeners);
     }
@@ -140,7 +144,8 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
      *
      * @param name the name of the new thread
      */
-    public NotifyingThread(@NotNull String name, @NotNull OnThreadCompletedListener... listeners) {
+    public NotifyingThread(@NotNull String name,
+                           @NotNull OnThreadCompletedListener... listeners) {
         this(null, null, name, listeners);
     }
 
@@ -159,7 +164,8 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
      * @throws SecurityException if the current thread cannot create a thread in the specified
      *                           thread group
      */
-    public NotifyingThread(@Nullable ThreadGroup group, @NotNull String name,
+    public NotifyingThread(@Nullable ThreadGroup group,
+                           @NotNull String name,
                            @NotNull OnThreadCompletedListener... listeners) {
         this(group, null, name, listeners);
     }
@@ -183,7 +189,8 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
      *               {@code null}, this thread's run method is invoked.
      * @param name   the name of the new thread.
      */
-    public NotifyingThread(Runnable target, String name,
+    public NotifyingThread(Runnable target,
+                           String name,
                            @NotNull OnThreadCompletedListener... listeners) {
         this(null, target, name, listeners);
     }
@@ -203,7 +210,8 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
      * @throws SecurityException if the current thread cannot create a thread in the specified
      *                           thread group
      */
-    public NotifyingThread(@Nullable ThreadGroup group, @NotNull String name) {
+    public NotifyingThread(@Nullable ThreadGroup group,
+                           @NotNull String name) {
         this(group, null, name);
     }
 
@@ -242,7 +250,9 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
      * @throws SecurityException if the current thread cannot create a thread in the specified
      *                           thread group or cannot override the context class loader methods.
      */
-    public NotifyingThread(@Nullable ThreadGroup group, Runnable target, @NotNull String name,
+    public NotifyingThread(@Nullable ThreadGroup group,
+                           Runnable target,
+                           @NotNull String name,
                            @NotNull OnThreadCompletedListener... listeners) {
         this(group, target, name, 0, listeners);
     }
@@ -256,71 +266,9 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
      *               {@code null}, this thread's run method is invoked.
      * @param name   the name of the new thread.
      */
-    public NotifyingThread(Runnable target, String name) {
+    public NotifyingThread(Runnable target,
+                           String name) {
         this(null, target, name);
-    }
-
-    /**
-     * Allocates a new {@code Thread} object so that it has {@code target} as its run object, has
-     * the specified {@code name} as its name, and belongs to the thread group referred to by {@code
-     * group}, and has the specified <i>stack size</i>.
-     *
-     * <p>This constructor is identical to {@link
-     * #Thread#Thread(ThreadGroup, Runnable, String)} with the exception of the fact that it allows
-     * the thread stack size to be specified.  The stack size is the approximate number of bytes of
-     * address space that the virtual machine is to allocate for this thread's stack.  <b>The effect
-     * of the {@code stackSize} parameter, if any, is highly platform dependent.</b>
-     *
-     * <p>On some platforms, specifying a higher value for the
-     * {@code stackSize} parameter may allow a thread to achieve greater recursion depth before
-     * throwing a {@link StackOverflowError}. Similarly, specifying a lower value may allow a
-     * greater number of threads to exist concurrently without throwing an {@link OutOfMemoryError}
-     * (or other internal error).  The details of the relationship between the value of the {@code
-     * stackSize} parameter and the maximum recursion depth and concurrency level are
-     * platform-dependent.  <b>On some platforms, the value of the {@code stackSize} parameter may
-     * have no effect whatsoever.</b>
-     *
-     * <p>The virtual machine is free to treat the {@code stackSize}
-     * parameter as a suggestion.  If the specified value is unreasonably low for the platform, the
-     * virtual machine may instead use some platform-specific minimum value; if the specified value
-     * is unreasonably high, the virtual machine may instead use some platform-specific maximum.
-     * Likewise, the virtual machine is free to round the specified value up or down as it sees fit
-     * (or to ignore it completely).
-     *
-     * <p>Specifying a value of zero for the {@code stackSize} parameter will
-     * cause this constructor to behave exactly like the {@code Thread(ThreadGroup, Runnable,
-     * String)} constructor.
-     *
-     * <p><i>Due to the platform-dependent nature of the behavior of this
-     * constructor, extreme care should be exercised in its use. The thread stack size necessary to
-     * perform a given computation will likely vary from one JRE implementation to another.  In
-     * light of this variation, careful tuning of the stack size parameter may be required, and the
-     * tuning may need to be repeated for each JRE implementation on which an application is to
-     * run.</i>
-     *
-     * <p>Implementation note: Java platform implementers are encouraged to
-     * document their implementation's behavior with respect to the {@code stackSize} parameter.
-     *
-     * @param group     the thread group. If {@code null} and there is a security manager, the group
-     *                  is determined by {@linkplain SecurityManager#getThreadGroup
-     *                  SecurityManager.getThreadGroup()}. If there is not a security manager or
-     *                  {@code SecurityManager.getThreadGroup()} returns {@code null}, the group is
-     *                  set to the current thread's thread group.
-     * @param target    the object whose {@code run} method is invoked when this thread is started.
-     *                  If {@code null}, this thread's run method is invoked.
-     * @param name      the name of the new thread
-     * @param stackSize the desired stack size for the new thread, or zero to indicate that this
-     *                  parameter is to be ignored.
-     *
-     * @throws SecurityException if the current thread cannot create a thread in the specified
-     *                           thread group
-     * @since 1.4
-     */
-    public NotifyingThread(@Nullable ThreadGroup group, Runnable target, @NotNull String name, long stackSize) {
-        super(group, target, name, stackSize);
-        mSubscribedClasses = new ArrayList<>(DEFAULT_CAPACITY);
-        mTarget = target;
-        setUncaughtExceptionHandler(this);
     }
 
     /**
@@ -358,7 +306,9 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
      * @throws SecurityException if the current thread cannot create a thread in the specified
      *                           thread group or cannot override the context class loader methods.
      */
-    public NotifyingThread(@Nullable ThreadGroup group, Runnable target, @NotNull String name) {
+    public NotifyingThread(@Nullable ThreadGroup group,
+                           Runnable target,
+                           @NotNull String name) {
         this(group, target, name, 0);
     }
 
@@ -418,54 +368,11 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
      *                           thread group
      * @since 1.4
      */
-    public NotifyingThread(@Nullable ThreadGroup group, Runnable target, @NotNull String name,
-                           long stackSize, @NotNull OnThreadCompletedListener... listeners) {
+    public NotifyingThread(@Nullable ThreadGroup group,
+                           Runnable target,
+                           @NotNull String name,
+                           long stackSize) {
         super(group, target, name, stackSize);
-        mSubscribedClasses = new ArrayList<>(Arrays.asList(listeners));
-        mTarget = target;
-        setUncaughtExceptionHandler(this);
-    }
-
-    /**
-     * Allocates a new {@code Thread} object so that it has {@code target} as its run object, has
-     * the specified {@code name} as its name, belongs to the thread group referred to by {@code
-     * group}, has the specified {@code stackSize}, and inherits initial values for {@linkplain
-     * InheritableThreadLocal inheritable thread-local} variables if {@code inheritThreadLocals} is
-     * {@code true}.
-     *
-     * <p> This constructor is identical to {@link
-     * #Thread#Thread(ThreadGroup, Runnable, String, long)} with the added ability to suppress, or
-     * not, the inheriting of initial values for inheritable thread-local variables from the
-     * constructing thread. This allows for finer grain control over inheritable thread-locals. Care
-     * must be taken when passing a value of {@code false} for {@code inheritThreadLocals}, as it
-     * may lead to unexpected behavior if the new thread executes code that expects a specific
-     * thread-local value to be inherited.
-     *
-     * <p> Specifying a value of {@code true} for the {@code inheritThreadLocals}
-     * parameter will cause this constructor to behave exactly like the {@code Thread(ThreadGroup,
-     * Runnable, String, long)} constructor.
-     *
-     * @param group               the thread group. If {@code null} and there is a security manager,
-     *                            the group is determined by {@linkplain SecurityManager#getThreadGroup
-     *                            SecurityManager.getThreadGroup()}. If there is not a security
-     *                            manager or {@code SecurityManager.getThreadGroup()} returns {@code
-     *                            null}, the group is set to the current thread's thread group.
-     * @param target              the object whose {@code run} method is invoked when this thread is
-     *                            started. If {@code null}, this thread's run method is invoked.
-     * @param name                the name of the new thread
-     * @param stackSize           the desired stack size for the new thread, or zero to indicate
-     *                            that this parameter is to be ignored
-     * @param inheritThreadLocals if {@code true}, inherit initial values for inheritable
-     *                            thread-locals from the constructing thread, otherwise no initial
-     *                            values are inherited
-     *
-     * @throws SecurityException if the current thread cannot create a thread in the specified
-     *                           thread group
-     * @since 9
-     */
-    public NotifyingThread(ThreadGroup group, Runnable target, String name, long stackSize,
-                           boolean inheritThreadLocals) {
-        super(group, target, name, stackSize, inheritThreadLocals);
         mSubscribedClasses = new ArrayList<>(DEFAULT_CAPACITY);
         mTarget = target;
         setUncaughtExceptionHandler(this);
@@ -473,45 +380,66 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
 
     /**
      * Allocates a new {@code Thread} object so that it has {@code target} as its run object, has
-     * the specified {@code name} as its name, belongs to the thread group referred to by {@code
-     * group}, has the specified {@code stackSize}, and inherits initial values for {@linkplain
-     * InheritableThreadLocal inheritable thread-local} variables if {@code inheritThreadLocals} is
-     * {@code true}.
+     * the specified {@code name} as its name, and belongs to the thread group referred to by {@code
+     * group}, and has the specified <i>stack size</i>.
      *
-     * <p> This constructor is identical to {@link
-     * #Thread#Thread(ThreadGroup, Runnable, String, long)} with the added ability to suppress, or
-     * not, the inheriting of initial values for inheritable thread-local variables from the
-     * constructing thread. This allows for finer grain control over inheritable thread-locals. Care
-     * must be taken when passing a value of {@code false} for {@code inheritThreadLocals}, as it
-     * may lead to unexpected behavior if the new thread executes code that expects a specific
-     * thread-local value to be inherited.
+     * <p>This constructor is identical to {@link
+     * #Thread#Thread(ThreadGroup, Runnable, String)} with the exception of the fact that it allows
+     * the thread stack size to be specified.  The stack size is the approximate number of bytes of
+     * address space that the virtual machine is to allocate for this thread's stack.  <b>The effect
+     * of the {@code stackSize} parameter, if any, is highly platform dependent.</b>
      *
-     * <p> Specifying a value of {@code true} for the {@code inheritThreadLocals}
-     * parameter will cause this constructor to behave exactly like the {@code Thread(ThreadGroup,
-     * Runnable, String, long)} constructor.
+     * <p>On some platforms, specifying a higher value for the
+     * {@code stackSize} parameter may allow a thread to achieve greater recursion depth before
+     * throwing a {@link StackOverflowError}. Similarly, specifying a lower value may allow a
+     * greater number of threads to exist concurrently without throwing an {@link OutOfMemoryError}
+     * (or other internal error).  The details of the relationship between the value of the {@code
+     * stackSize} parameter and the maximum recursion depth and concurrency level are
+     * platform-dependent.  <b>On some platforms, the value of the {@code stackSize} parameter may
+     * have no effect whatsoever.</b>
      *
-     * @param group               the thread group. If {@code null} and there is a security manager,
-     *                            the group is determined by {@linkplain SecurityManager#getThreadGroup
-     *                            SecurityManager.getThreadGroup()}. If there is not a security
-     *                            manager or {@code SecurityManager.getThreadGroup()} returns {@code
-     *                            null}, the group is set to the current thread's thread group.
-     * @param target              the object whose {@code run} method is invoked when this thread is
-     *                            started. If {@code null}, this thread's run method is invoked.
-     * @param name                the name of the new thread
-     * @param stackSize           the desired stack size for the new thread, or zero to indicate
-     *                            that this parameter is to be ignored
-     * @param inheritThreadLocals if {@code true}, inherit initial values for inheritable
-     *                            thread-locals from the constructing thread, otherwise no initial
-     *                            values are inherited
+     * <p>The virtual machine is free to treat the {@code stackSize}
+     * parameter as a suggestion.  If the specified value is unreasonably low for the platform, the
+     * virtual machine may instead use some platform-specific minimum value; if the specified value
+     * is unreasonably high, the virtual machine may instead use some platform-specific maximum.
+     * Likewise, the virtual machine is free to round the specified value up or down as it sees fit
+     * (or to ignore it completely).
+     *
+     * <p>Specifying a value of zero for the {@code stackSize} parameter will
+     * cause this constructor to behave exactly like the {@code Thread(ThreadGroup, Runnable,
+     * String)} constructor.
+     *
+     * <p><i>Due to the platform-dependent nature of the behavior of this
+     * constructor, extreme care should be exercised in its use. The thread stack size necessary to
+     * perform a given computation will likely vary from one JRE implementation to another.  In
+     * light of this variation, careful tuning of the stack size parameter may be required, and the
+     * tuning may need to be repeated for each JRE implementation on which an application is to
+     * run.</i>
+     *
+     * <p>Implementation note: Java platform implementers are encouraged to
+     * document their implementation's behavior with respect to the {@code stackSize} parameter.
+     *
+     * @param group     the thread group. If {@code null} and there is a security manager, the group
+     *                  is determined by {@linkplain SecurityManager#getThreadGroup
+     *                  SecurityManager.getThreadGroup()}. If there is not a security manager or
+     *                  {@code SecurityManager.getThreadGroup()} returns {@code null}, the group is
+     *                  set to the current thread's thread group.
+     * @param target    the object whose {@code run} method is invoked when this thread is started.
+     *                  If {@code null}, this thread's run method is invoked.
+     * @param name      the name of the new thread
+     * @param stackSize the desired stack size for the new thread, or zero to indicate that this
+     *                  parameter is to be ignored.
      *
      * @throws SecurityException if the current thread cannot create a thread in the specified
      *                           thread group
-     * @since 9
+     * @since 1.4
      */
-    public NotifyingThread(ThreadGroup group, Runnable target, String name, long stackSize,
-                           boolean inheritThreadLocals,
+    public NotifyingThread(@Nullable ThreadGroup group,
+                           Runnable target,
+                           @NotNull String name,
+                           long stackSize,
                            @NotNull OnThreadCompletedListener... listeners) {
-        super(group, target, name, stackSize, inheritThreadLocals);
+        super(group, target, name, stackSize);
         mSubscribedClasses = new ArrayList<>(Arrays.asList(listeners));
         mTarget = target;
         setUncaughtExceptionHandler(this);
@@ -554,7 +482,15 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
         mSubscribedClasses.clear();
     }
 
-    public void execute(DoubleConsumer consumer, double args) {
+    public void execute(Consumer<ArgumentParser> consumer, @NotNull ArgumentParser args) {
+        mTarget = () -> consumer.accept(args);
+    }
+
+    public void execute(Runnable runnable) {
+        mTarget = runnable;
+    }
+
+    /*public void execute(DoubleConsumer consumer, double args) {
         mTarget = () -> consumer.accept(args);
     }
 
@@ -596,7 +532,7 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
 
     public void execute(Consumer<String[]> consumer, String... args) {
         mTarget = () -> consumer.accept(args);
-    }
+    }*/
 
     public void execute(BooleanSupplier supplier, final AtomicBoolean result) {
         mTarget = () -> result.set(supplier.getAsBoolean());
