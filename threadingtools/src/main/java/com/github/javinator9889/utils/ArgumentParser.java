@@ -421,7 +421,7 @@ public class ArgumentParser implements Serializable, Cloneable {
      * @throws InvalidClassTypeException whether the object contained at {@code paramName} is not an
      *                                   {@link String}.
      */
-    public String getStringParam(@NotNull String paramName) {
+    public String getString(@NotNull String paramName) {
         Object paramValue = mArguments.getOrDefault(paramName, null);
         if (paramValue instanceof String || paramValue == null)
             return (String) paramValue;
@@ -440,7 +440,7 @@ public class ArgumentParser implements Serializable, Cloneable {
      * @throws InvalidClassTypeException whether the object contained at {@code paramName} is not an
      *                                   {@link Integer} or it is {@code null}.
      */
-    public int getIntParam(@NotNull String paramName) {
+    public int getInt(@NotNull String paramName) {
         Object paramValue = mArguments.getOrDefault(paramName, null);
         if (paramValue instanceof Integer)
             return ((Number) paramValue).intValue();
@@ -469,7 +469,7 @@ public class ArgumentParser implements Serializable, Cloneable {
      * @throws InvalidClassTypeException whether the object contained at {@code paramName} is not an
      *                                   {@link Byte} or it is {@code null}.
      */
-    public byte getByteParam(@NotNull String paramName) {
+    public byte getByte(@NotNull String paramName) {
         Object paramValue = mArguments.getOrDefault(paramName, null);
         if (paramValue instanceof Byte)
             return ((Number) paramValue).byteValue();
@@ -498,7 +498,7 @@ public class ArgumentParser implements Serializable, Cloneable {
      * @throws InvalidClassTypeException whether the object contained at {@code paramName} is not an
      *                                   {@link Short} or it is {@code null}.
      */
-    public short getShortParam(@NotNull String paramName) {
+    public short getShort(@NotNull String paramName) {
         Object paramValue = mArguments.getOrDefault(paramName, null);
         if (paramValue instanceof Short)
             return ((Number) paramValue).shortValue();
@@ -527,7 +527,7 @@ public class ArgumentParser implements Serializable, Cloneable {
      * @throws InvalidClassTypeException whether the object contained at {@code paramName} is not an
      *                                   {@link Long} or it is {@code null}.
      */
-    public long getLongParam(@NotNull String paramName) {
+    public long getLong(@NotNull String paramName) {
         Object paramValue = mArguments.getOrDefault(paramName, null);
         if (paramValue instanceof Long)
             return ((Number) paramValue).longValue();
@@ -556,7 +556,7 @@ public class ArgumentParser implements Serializable, Cloneable {
      * @throws InvalidClassTypeException whether the object contained at {@code paramName} is not an
      *                                   {@link Float} or it is {@code null}.
      */
-    public float getFloatParam(@NotNull String paramName) {
+    public float getFloat(@NotNull String paramName) {
         Object paramValue = mArguments.getOrDefault(paramName, null);
         if (paramValue instanceof Float)
             return ((Number) paramValue).floatValue();
@@ -585,7 +585,7 @@ public class ArgumentParser implements Serializable, Cloneable {
      * @throws InvalidClassTypeException whether the object contained at {@code paramName} is not an
      *                                   {@link Double} or it is {@code null}.
      */
-    public double getDoubleParam(@NotNull String paramName) {
+    public double getDouble(@NotNull String paramName) {
         Object paramValue = mArguments.getOrDefault(paramName, null);
         if (paramValue instanceof Double)
             return ((Number) paramValue).doubleValue();
@@ -614,7 +614,7 @@ public class ArgumentParser implements Serializable, Cloneable {
      * @throws InvalidClassTypeException whether the object contained at {@code paramName} is not an
      *                                   {@link Boolean} or it is {@code null}.
      */
-    public boolean getBooleanParam(@NotNull String paramName) {
+    public boolean getBoolean(@NotNull String paramName) {
         Object paramValue = mArguments.getOrDefault(paramName, null);
         if (paramValue instanceof Boolean)
             return (Boolean) paramValue;
@@ -641,7 +641,7 @@ public class ArgumentParser implements Serializable, Cloneable {
      * @throws InvalidClassTypeException whether the object contained at {@code paramName} is not an
      *                                   {@link Byte} or it is {@code null}.
      */
-    public byte[] getBytesParam(@NotNull String paramName) {
+    public byte[] getBytes(@NotNull String paramName) {
         Object paramValue = mArguments.getOrDefault(paramName, null);
         if (paramValue instanceof byte[])
             return (byte[]) paramValue;
@@ -663,7 +663,7 @@ public class ArgumentParser implements Serializable, Cloneable {
      * @throws InvalidClassTypeException whether the object contained at {@code paramName} is not an
      *                                   {@link List} or it is {@code null}.
      */
-    public List<?> getListParam(@NotNull String paramName) {
+    public List<?> getList(@NotNull String paramName) {
         Object paramValue = mArguments.getOrDefault(paramName, null);
         if (paramValue instanceof List<?>) {
             return (List<?>) paramValue;

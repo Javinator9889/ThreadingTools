@@ -36,8 +36,8 @@ public class ThreadTest {
     }
 
     public void calculate(ArgumentParser arguments) {
-        int multiplier = arguments.getIntParam("mul");
-        int divider = arguments.getIntParam("div");
+        int multiplier = arguments.getInt("mul");
+        int divider = arguments.getInt("div");
         System.out.println(mInt * multiplier / divider);
     }
 
@@ -46,8 +46,8 @@ public class ThreadTest {
     }
 
     public int doInt(ArgumentParser argumentParser) {
-        return mInt * argumentParser.getIntParam("mul") *
-                new Random().nextInt(argumentParser.getIntParam("bound"));
+        return mInt * argumentParser.getInt("mul") *
+                new Random().nextInt(argumentParser.getInt("bound"));
     }
 
     @Test
