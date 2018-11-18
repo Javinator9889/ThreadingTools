@@ -210,12 +210,18 @@ public class ArgumentParser implements Serializable, Cloneable {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
+        String classDefinition = super.toString();
+        builder.append(classDefinition).append("\n").append('[');
+        boolean loopFirstExecution = true;
         for (String paramName : mArguments.keySet()) {
             String paramValue = getAsString(paramName);
-            if (builder.length() > 0)
-                builder.append(" ");
+            if (!loopFirstExecution)
+                builder.append(", ");
+            else
+                loopFirstExecution = false;
             builder.append(paramName).append("=").append(paramValue);
         }
+        builder.append(']');
         return builder.toString();
     }
 

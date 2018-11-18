@@ -20,7 +20,6 @@
 package com.github.javinator9889.threading.threads.notifyingthread;
 
 import com.github.javinator9889.utils.ArgumentParser;
-import com.google.common.util.concurrent.AtomicDouble;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -29,9 +28,10 @@ import java.util.Arrays;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.function.*;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Supplier;
 
 @SuppressWarnings("unchecked")
 public class NotifyingThread extends Thread implements Thread.UncaughtExceptionHandler {
@@ -482,109 +482,24 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
         mSubscribedClasses.clear();
     }
 
-    public void execute(Consumer<ArgumentParser> consumer, @NotNull ArgumentParser args) {
+    public void setExecutable(@NotNull Consumer<ArgumentParser> consumer,
+                              @NotNull ArgumentParser args) {
         mTarget = () -> consumer.accept(args);
     }
 
-    public void execute(Runnable runnable) {
+    public void setExecutable(@NotNull Runnable runnable) {
         mTarget = runnable;
     }
 
-    /*public void execute(DoubleConsumer consumer, double args) {
-        mTarget = () -> consumer.accept(args);
-    }
-
-    public void execute(IntConsumer consumer, int args) {
-        mTarget = () -> consumer.accept(args);
-    }
-
-    public void execute(LongConsumer consumer, long args) {
-        mTarget = () -> consumer.accept(args);
-    }
-
-    public void execute(ObjDoubleConsumer consumer, Object arg1, double arg2) {
-        mTarget = () -> consumer.accept(arg1, arg2);
-    }
-
-    public void execute(ObjIntConsumer consumer, Object arg1, int arg2) {
-        mTarget = () -> consumer.accept(arg1, arg2);
-    }
-
-    public void execute(ObjLongConsumer consumer, Object arg1, long arg2) {
-        mTarget = () -> consumer.accept(arg1, arg2);
-    }
-
-    public void execute(BiConsumer consumer, Object arg1, Object arg2) {
-        mTarget = () -> consumer.accept(arg1, arg2);
-    }
-
-    public void execute(Consumer<String> consumer, String arg) {
-        mTarget = () -> consumer.accept(arg);
-    }
-
-    public void execute(Consumer<Object> consumer, Object arg) {
-        mTarget = () -> consumer.accept(arg);
-    }
-
-    public void execute(Consumer<Object[]> consumer, Object... args) {
-        mTarget = () -> consumer.accept(args);
-    }
-
-    public void execute(Consumer<String[]> consumer, String... args) {
-        mTarget = () -> consumer.accept(args);
-    }*/
-
-    public void execute(BooleanSupplier supplier, final AtomicBoolean result) {
-        mTarget = () -> result.set(supplier.getAsBoolean());
-    }
-
-    public void execute(DoubleSupplier supplier, final AtomicDouble result) {
-        mTarget = () -> result.set(supplier.getAsDouble());
-    }
-
-    public void execute(IntSupplier supplier, final AtomicInteger result) {
-        mTarget = () -> result.set(supplier.getAsInt());
-    }
-
-    public void execute(LongSupplier supplier, final AtomicLong result) {
-        mTarget = () -> result.set(supplier.getAsLong());
-    }
-
-    public void execute(Supplier supplier, final AtomicReference result) {
+    public void setExecutable(@NotNull Supplier supplier,
+                              @NotNull final AtomicReference result) {
         mTarget = () -> result.set(supplier.get());
     }
 
-    public void execute(DoubleFunction function, double arg, final AtomicReference result) {
-        mTarget = () -> result.set(function.apply(arg));
-    }
-
-    public void execute(IntFunction function, int arg, final AtomicReference result) {
-        mTarget = () -> result.set(function.apply(arg));
-    }
-
-    public void execute(LongFunction function, long arg, final AtomicReference result) {
-        mTarget = () -> result.set(function.apply(arg));
-    }
-
-    public void execute(Function function, Object arg, final AtomicReference result) {
-        mTarget = () -> result.set(function.apply(arg));
-    }
-
-    public void execute(BiFunction function, Object arg1, Object arg2,
-                        final AtomicReference result) {
-        mTarget = () -> result.set(function.apply(arg1, arg2));
-    }
-
-    public void execute(Function function, String arg, final AtomicReference result) {
-        mTarget = () -> result.set(function.apply(arg));
-    }
-
-    public void execute(Function function, String[] args, final AtomicReference result) {
-        mTarget = () -> result.set(function.apply(args));
-    }
-
-    public void execute(Function function, Object[] args, final AtomicReference result) {
-        mTarget = () -> result.set(function.apply(args));
+    public void setExecutable(@NotNull Function<ArgumentParser, ?> function,
+                              @NotNull final ArgumentParser arguments,
+                              @NotNull final AtomicReference result) {
+        mTarget = () -> result.set(function.apply(arguments));
     }
 
     /**
@@ -718,5 +633,16 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
     @Override
     public int hashCode() {
         return Objects.hash(mSubscribedClasses, mShouldCallSubscribedClassesAsynchronously);
+    }
+
+    /**
+     * Throws CloneNotSupportedException as a Thread can not be meaningfully cloned. Construct a new
+     * Thread instead.
+     *
+     * @throws CloneNotSupportedException always
+     */
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        throw new CloneNotSupportedException();
     }
 }

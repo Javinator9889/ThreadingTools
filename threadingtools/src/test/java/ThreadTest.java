@@ -22,12 +22,13 @@ import com.github.javinator9889.utils.ArgumentParser;
 import org.junit.Test;
 
 import java.util.Random;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class ThreadTest {
-    private int mInt;
+    private volatile int mInt;
 
     public ThreadTest() {
-        mInt = new Random().nextInt();
+        mInt = new Random().nextInt(2345);
     }
 
     public void calculate() {
@@ -40,17 +41,48 @@ public class ThreadTest {
         System.out.println(mInt * multiplier / divider);
     }
 
+    public int doInt() {
+        return mInt * new Random().nextInt(1337);
+    }
+
+    public int doInt(ArgumentParser argumentParser) {
+        return mInt * argumentParser.getIntParam("mul") *
+                new Random().nextInt(argumentParser.getIntParam("bound"));
+    }
+
     @Test
     public void test() {
         NotifyingThread thread1 = new NotifyingThread();
         NotifyingThread thread2 = new NotifyingThread();
+        NotifyingThread thread3 = new NotifyingThread();
+        NotifyingThread thread4 = new NotifyingThread();
         ThreadTest t = new ThreadTest();
+        System.out.println(t.mInt);
         ArgumentParser parser = new ArgumentParser(2);
         parser.putParam("mul", 12);
         parser.putParam("div", 13);
-        thread1.execute(t::calculate);
-        thread2.execute(t::calculate, parser);
+        ArgumentParser parser1 = new ArgumentParser(2);
+        parser1.putParam("mul", new Random().nextInt(123));
+        parser1.putParam("bound", 1457);
+        AtomicReference<Integer> doIntR = new AtomicReference<>();
+        AtomicReference<Integer> r2 = new AtomicReference<>();
+        thread1.setExecutable(t::calculate);
+        thread2.setExecutable(t::calculate, parser);
+        thread3.setExecutable(t::doInt, doIntR);
+        thread4.setExecutable(t::doInt, parser1, r2);
+        System.out.println(parser.toString());
+        System.out.println(parser1.toString());
+        System.out.println();
         thread1.start();
         thread2.start();
+        thread3.start();
+        thread4.start();
+        try {
+            thread3.join();
+            System.out.println(doIntR.get());
+            thread4.join();
+            System.out.println(r2.get());
+        } catch (InterruptedException ignored) {
+        }
     }
 }
