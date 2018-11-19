@@ -125,7 +125,6 @@ public class LambdasPooling extends AbstractPooling {
         private Random mRandom;
         private double mFirstAttribute;
         private double mSecondAttribute;
-        private long mPrime;
         private int mMultiplier;
         private int mSPF[] = new int[MAXF];
 
@@ -133,7 +132,6 @@ public class LambdasPooling extends AbstractPooling {
             mRandom = new Random();
             mFirstAttribute = mRandom.nextDouble();
             mSecondAttribute = mRandom.nextDouble();
-            mPrime = mRandom.nextLong();
             mMultiplier = mRandom.nextInt(123456);
         }
 
