@@ -38,7 +38,7 @@ public class LambdasPooling extends AbstractPooling {
     private static final String FIRST_DIVIDE = "first_divide";
     private static final String SECON_DIVIDE = "secon_divide";
     private static final String PRIME_FACTORS = "prime_factors";
-    private static final int MAXF = Integer.MAX_VALUE / 10;
+    private static final int MAXF = Integer.MAX_VALUE / 20;
     private AtomicReference<Double> mHeavyOperationResult;
     private AtomicReference<List<String>> mPrimeFactorsResult;
     private HeavyLoadClass mHeavyLoadClass;

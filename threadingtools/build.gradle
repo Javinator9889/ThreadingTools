@@ -1,10 +1,45 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+    }
+}
+
+
 plugins {
     id 'java'
     id 'org.jetbrains.intellij' version '0.3.12'
 }
 
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'ThreadingTools'
+
+    publishedGroupId = 'com.github.javinator9889'
+    libraryName = 'ThreadingTools'
+    artifact = 'threadingtools'
+
+    libraryDescription = 'Java useful tools for managing threads like a master ⚡👊🛠'
+
+    siteUrl = 'https://github.com/Javinator9889/ThreadingTools'
+    gitUrl = 'https://github.com/Javinator9889/ThreadingTools.git'
+
+    libraryVersion = '1.0'
+
+    developerId = 'Javinator9889'
+    developerName = 'Javinator9889'
+    developerEmail = 'javialonso007@hotmail.es'
+
+    licenseName = 'GNU General Public License v3.0'
+    licenseUrl = 'https://github.com/Javinator9889/FileToBytesExporter/blob/master/LICENSE'
+    allLicenses = ["GPL-3"]
+}
+
 group 'com.github.javinator9889'
-version '0.3-ALPHA'
+version '1.0'
 
 sourceCompatibility = 1.8
 
@@ -16,11 +51,12 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
-intellij {
-    version '2018.2.6'
+jar {
+    manifest {
+        attributes('Implementation-Title': project.name,
+                'Implementation-Version': project.version)
+    }
 }
-patchPluginXml {
-    changeNotes """
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>"""
-}
+
+apply from: 'https://raw.githubusercontent.com/brightec/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/brightec/JCenter/master/bintrayv1.gradle'

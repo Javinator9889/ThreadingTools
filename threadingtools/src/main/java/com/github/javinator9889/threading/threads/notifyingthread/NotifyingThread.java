@@ -960,7 +960,6 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
                 UncaughtExceptionHandler handler = getUncaughtExceptionHandler();
                 if (handler != null)
                     handler.uncaughtException(this, ex);
-//                callSubscribedClasses(this, ex);
             }
         }
     }
