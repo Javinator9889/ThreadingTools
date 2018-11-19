@@ -220,6 +220,12 @@ public class ThreadsPooling {
     private ThreadsPooling(int coreThreads, int maximumPoolSize, long keepAliveTime,
                            TimeUnit timeUnit, BlockingQueue<Runnable> workingThreadsQueue,
                            RejectedExecutionHandler rejectedExecutionHandler) {
+//        super(coreThreads,
+//                maximumPoolSize,
+//                keepAliveTime,
+//                timeUnit,
+//                workingThreadsQueue,
+//                rejectedExecutionHandler);
         mWorkingThreadsQueue = workingThreadsQueue;
         mRejectedExecutionHandler = rejectedExecutionHandler;
         mPoolExecutor = new ThreadPoolExecutor(coreThreads,
@@ -251,6 +257,13 @@ public class ThreadsPooling {
                            TimeUnit timeUnit, BlockingQueue<Runnable> workingThreadsQueue,
                            ThreadFactory factory,
                            RejectedExecutionHandler rejectedExecutionHandler) {
+//        super(coreThreads,
+//                maximumPoolSize,
+//                keepAliveTime,
+//                timeUnit,
+//                workingThreadsQueue,
+//                factory,
+//                rejectedExecutionHandler);
         mWorkingThreadsQueue = workingThreadsQueue;
         mRejectedExecutionHandler = rejectedExecutionHandler;
         mPoolExecutor = new ThreadPoolExecutor(coreThreads,

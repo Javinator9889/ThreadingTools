@@ -48,7 +48,7 @@ import org.jetbrains.annotations.Nullable;
  * <p>
  * At any time you can <b>override</b> the {@linkplain NotifyingThread#setUncaughtExceptionHandler(Thread.UncaughtExceptionHandler)
  * uncaught exception handler} for setting up a custom behaviour, knowing that, when an exception
- * occurs, {@link #onThreadCompletedListener(Runnable, Throwable)} will not be called.
+ * occurs, {@link #onThreadCompletedListener(Thread, Throwable)} will not be called.
  */
 public interface OnThreadCompletedListener {
     /**
@@ -59,9 +59,8 @@ public interface OnThreadCompletedListener {
      * <p>
      * Refer to {@link NotifyingThread#addOnThreadCompletedListener(OnThreadCompletedListener)} for
      * getting more information about subscribing classes.
-     *
-     * @param thread    the thread that has just finished its execution.
+     *  @param thread    the thread that has just finished its execution.
      * @param exception the exception if happened, else {@code null}.
      */
-    void onThreadCompletedListener(@NotNull final Runnable thread, @Nullable Throwable exception);
+    void onThreadCompletedListener(@NotNull final Thread thread, @Nullable Throwable exception);
 }

@@ -137,7 +137,7 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
     /**
      * Whether the calling of subscribed classes must be done asynchronously or not.
      *
-     * @see #callSubscribedClasses(Runnable, Throwable)
+     * @see #callSubscribedClasses(Thread, Throwable)
      */
     private AtomicBoolean mShouldCallSubscribedClassesAsynchronously = new AtomicBoolean(false);
 
@@ -166,7 +166,7 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
      * @param listeners an {@code array} of {@linkplain OnThreadCompletedListener listeners} which
      *                  are classes that implements {@linkplain OnThreadCompletedListener}, so when
      *                  a thread finish its work, those classes are called at the {@link
-     *                  OnThreadCompletedListener#onThreadCompletedListener(Runnable, Throwable)}
+     *                  OnThreadCompletedListener#onThreadCompletedListener(Thread, Throwable)}
      *                  method, giving both {@link Runnable} of the just finished thread and {@link
      *                  Throwable} with any exception that occurred during execution.
      */
@@ -199,7 +199,7 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
      * @param listeners an {@code array} of {@linkplain OnThreadCompletedListener listeners} which
      *                  are classes that implements {@linkplain OnThreadCompletedListener}, so when
      *                  a thread finish its work, those classes are called at the {@link
-     *                  OnThreadCompletedListener#onThreadCompletedListener(Runnable, Throwable)}
+     *                  OnThreadCompletedListener#onThreadCompletedListener(Thread, Throwable)}
      *                  method, giving both {@link Runnable} of the just finished thread and {@link
      *                  Throwable} with any exception that occurred during execution.
      */
@@ -247,7 +247,7 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
      * @param listeners an {@code array} of {@linkplain OnThreadCompletedListener listeners} which
      *                  are classes that implements {@linkplain OnThreadCompletedListener}, so when
      *                  a thread finish its work, those classes are called at the {@link
-     *                  OnThreadCompletedListener#onThreadCompletedListener(Runnable, Throwable)}
+     *                  OnThreadCompletedListener#onThreadCompletedListener(Thread, Throwable)}
      *                  method, giving both {@link Runnable} of the just finished thread and {@link
      *                  Throwable} with any exception that occurred during execution.
      *
@@ -269,7 +269,7 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
      * @param listeners an {@code array} of {@linkplain OnThreadCompletedListener listeners} which
      *                  are classes that implements {@linkplain OnThreadCompletedListener}, so when
      *                  a thread finish its work, those classes are called at the {@link
-     *                  OnThreadCompletedListener#onThreadCompletedListener(Runnable, Throwable)}
+     *                  OnThreadCompletedListener#onThreadCompletedListener(Thread, Throwable)}
      *                  method, giving both {@link Runnable} of the just finished thread and {@link
      *                  Throwable} with any exception that occurred during execution.
      */
@@ -292,7 +292,7 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
      * @param listeners an {@code array} of {@linkplain OnThreadCompletedListener listeners} which
      *                  are classes that implements {@linkplain OnThreadCompletedListener}, so when
      *                  a thread finish its work, those classes are called at the {@link
-     *                  OnThreadCompletedListener#onThreadCompletedListener(Runnable, Throwable)}
+     *                  OnThreadCompletedListener#onThreadCompletedListener(Thread, Throwable)}
      *                  method, giving both {@link Runnable} of the just finished thread and {@link
      *                  Throwable} with any exception that occurred during execution.
      *
@@ -326,7 +326,7 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
      * @param listeners an {@code array} of {@linkplain OnThreadCompletedListener listeners} which
      *                  are classes that implements {@linkplain OnThreadCompletedListener}, so when
      *                  a thread finish its work, those classes are called at the {@link
-     *                  OnThreadCompletedListener#onThreadCompletedListener(Runnable, Throwable)}
+     *                  OnThreadCompletedListener#onThreadCompletedListener(Thread, Throwable)}
      *                  method, giving both {@link Runnable} of the just finished thread and {@link
      *                  Throwable} with any exception that occurred during execution.
      */
@@ -390,7 +390,7 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
      * @param listeners an {@code array} of {@linkplain OnThreadCompletedListener listeners} which
      *                  are classes that implements {@linkplain OnThreadCompletedListener}, so when
      *                  a thread finish its work, those classes are called at the {@link
-     *                  OnThreadCompletedListener#onThreadCompletedListener(Runnable, Throwable)}
+     *                  OnThreadCompletedListener#onThreadCompletedListener(Thread, Throwable)}
      *                  method, giving both {@link Runnable} of the just finished thread and {@link
      *                  Throwable} with any exception that occurred during execution.
      *
@@ -579,7 +579,7 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
      * @param listeners an {@code array} of {@linkplain OnThreadCompletedListener listeners} which
      *                  are classes that implements {@linkplain OnThreadCompletedListener}, so when
      *                  a thread finish its work, those classes are called at the {@link
-     *                  OnThreadCompletedListener#onThreadCompletedListener(Runnable, Throwable)}
+     *                  OnThreadCompletedListener#onThreadCompletedListener(Thread, Throwable)}
      *                  method, giving both {@link Runnable} of the just finished thread and {@link
      *                  Throwable} with any exception that occurred during execution.
      *
@@ -637,7 +637,7 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
      * @see #addOnThreadCompletedListener(OnThreadCompletedListener)
      * @see #addOnThreadCompleteListener(OnThreadCompletedListener...)
      */
-    private void callSubscribedClasses(final @NotNull Runnable thread,
+    private void callSubscribedClasses(final @NotNull Thread thread,
                                        final @Nullable Throwable exception) {
         if (mSubscribedClasses.isEmpty())
             return;
@@ -941,7 +941,7 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
     /**
      * If this thread was constructed using a separate {@code Runnable} run object, then that {@code
      * Runnable} object's {@code run} method is called; otherwise, this method does nothing and
-     * returns. When finishes, it calls {@link #callSubscribedClasses(Runnable, Throwable)
+     * returns. When finishes, it calls {@link #callSubscribedClasses(Thread, Throwable)
      * subscribed classes} notifying that it has just ended-up.
      * <p>
      * Subclasses of {@code Thread} should override this method.
@@ -953,8 +953,15 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
     @Override
     public void run() {
         if (mTarget != null) {
-            mTarget.run();
-            callSubscribedClasses(mTarget, null);
+            try {
+                mTarget.run();
+                callSubscribedClasses(this, null);
+            } catch (Throwable ex) {
+                UncaughtExceptionHandler handler = getUncaughtExceptionHandler();
+                if (handler != null)
+                    handler.uncaughtException(this, ex);
+//                callSubscribedClasses(this, ex);
+            }
         }
     }
 
@@ -982,10 +989,10 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
     public String toString() {
         ThreadGroup group = getThreadGroup();
         if (group != null) {
-            return "NotifyingThread[" + getName() + "," + getPriority() + "," +
+            return "NotifyingThread[" + getName() + ", " + getPriority() + ", " +
                     group.getName() + "]";
         } else {
-            return "NotifyingThread[" + getName() + "," + getPriority() + "," +
+            return "NotifyingThread[" + getName() + ", " + getPriority() + ", " +
                     "" + "]";
         }
     }
