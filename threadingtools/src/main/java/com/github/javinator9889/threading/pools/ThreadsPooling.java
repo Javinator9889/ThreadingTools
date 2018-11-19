@@ -142,11 +142,6 @@ public class ThreadsPooling {
     private BlockingQueue<Runnable> mWorkingThreadsQueue;
 
     /**
-     * The {@linkplain RejectedExecutionHandler handler} used when a thread is rejected.
-     */
-    private RejectedExecutionHandler mRejectedExecutionHandler;
-
-    /**
      * Private constructor used by {@link Builder} - cannot be accessed from outside.
      * <p>
      * It has the same behaviour as calling {@link #ThreadsPooling(int, int, long, TimeUnit,
@@ -220,14 +215,7 @@ public class ThreadsPooling {
     private ThreadsPooling(int coreThreads, int maximumPoolSize, long keepAliveTime,
                            TimeUnit timeUnit, BlockingQueue<Runnable> workingThreadsQueue,
                            RejectedExecutionHandler rejectedExecutionHandler) {
-//        super(coreThreads,
-//                maximumPoolSize,
-//                keepAliveTime,
-//                timeUnit,
-//                workingThreadsQueue,
-//                rejectedExecutionHandler);
         mWorkingThreadsQueue = workingThreadsQueue;
-        mRejectedExecutionHandler = rejectedExecutionHandler;
         mPoolExecutor = new ThreadPoolExecutor(coreThreads,
                 maximumPoolSize,
                 keepAliveTime,
@@ -257,15 +245,7 @@ public class ThreadsPooling {
                            TimeUnit timeUnit, BlockingQueue<Runnable> workingThreadsQueue,
                            ThreadFactory factory,
                            RejectedExecutionHandler rejectedExecutionHandler) {
-//        super(coreThreads,
-//                maximumPoolSize,
-//                keepAliveTime,
-//                timeUnit,
-//                workingThreadsQueue,
-//                factory,
-//                rejectedExecutionHandler);
         mWorkingThreadsQueue = workingThreadsQueue;
-        mRejectedExecutionHandler = rejectedExecutionHandler;
         mPoolExecutor = new ThreadPoolExecutor(coreThreads,
                 maximumPoolSize,
                 keepAliveTime,
@@ -298,7 +278,7 @@ public class ThreadsPooling {
             mWorkingThreadsQueue.add(thread);
         } catch (IllegalStateException | ClassCastException | NullPointerException |
                 IllegalArgumentException ignored) {
-            mRejectedExecutionHandler.rejectedExecution(thread, mPoolExecutor);
+            getRejectedExecutionHandler().rejectedExecution(thread, mPoolExecutor);
         }
     }
 
@@ -321,7 +301,7 @@ public class ThreadsPooling {
             int threadNotAdded = remainingCapacity - sizeBeforeAddingTheElements;
             if (threadNotAdded >= threads.length)
                 threadNotAdded = 0;
-            mRejectedExecutionHandler.rejectedExecution(threads[threadNotAdded], mPoolExecutor);
+            getRejectedExecutionHandler().rejectedExecution(threads[threadNotAdded], mPoolExecutor);
         }
     }
 
@@ -643,7 +623,7 @@ public class ThreadsPooling {
         return super.toString() + '{' +
                 "ThreadPoolExecutor: " + mPoolExecutor.toString() + ",\n" +
                 "BlockingQueue: " + mWorkingThreadsQueue.toString() + ",\n" +
-                "RejectedExecutionHandler: " + mRejectedExecutionHandler.toString() + '}';
+                "RejectedExecutionHandler: " + getRejectedExecutionHandler().toString() + '}';
     }
 
     /**
