@@ -26,14 +26,35 @@ import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * This handler waits until all running threads and pending ones are executed, then runs the
+ * rejected {@code Runnable} on the {@link com.github.javinator9889.threading.pools.ThreadsPooling}
+ * thread.
+ * <p>
+ * There is a definition available at {@link com.github.javinator9889.threading.pools.ThreadsPooling#WAIT_SHUTDOWN_RUN_TASK_ON_REJECTED_HANDLER}
+ * that uses a default {@code timeout} of {@code 100 ms.}. You can use yours with your custom
+ * implementation by calling the {@link #RunWhenTasksFinishedOnRejectedHandler(long, TimeUnit)}
+ * constructor with your custom values.
+ */
 public class RunWhenTasksFinishedOnRejectedHandler implements RejectedExecutionHandler {
     private long mTimeout;
     private TimeUnit mTimeUnit;
 
+    /**
+     * Private constructor for not allowing class instantiation with no args.
+     */
     private RunWhenTasksFinishedOnRejectedHandler() {
     }
 
+    /**
+     * Generates a new handler by using the custom timeout provided.
+     *
+     * @param timeout  timeout value - must be higher than zero.
+     * @param timeUnit time unit for the timeout - cannot be {@code null}.
+     */
     public RunWhenTasksFinishedOnRejectedHandler(long timeout, @NotNull TimeUnit timeUnit) {
+        if (timeout < 0)
+            throw new IllegalArgumentException("Timeout must be zero or higher, not " + timeout);
         mTimeout = timeout;
         mTimeUnit = timeUnit;
     }
@@ -50,8 +71,6 @@ public class RunWhenTasksFinishedOnRejectedHandler implements RejectedExecutionH
      *
      * @param thread   the runnable task requested to be executed
      * @param executor the executor attempting to execute this task
-     *
-     * @throws RejectedExecutionException if there is no remedy
      */
     @Override
     public void rejectedExecution(Runnable thread, ThreadPoolExecutor executor) {

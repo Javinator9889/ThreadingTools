@@ -21,6 +21,11 @@ package com.github.javinator9889.threading.errors;
 
 import java.util.concurrent.RejectedExecutionException;
 
+/**
+ * Subclass of {@link RejectedExecutionException} which is a custom exception thrown by class {@link
+ * com.github.javinator9889.threading.pools.rejectedhandlers.DefaultRejectedExecutionHandler}, which
+ * indicates that there is no reject handler defined but default one.
+ */
 public class NoRejectedHandlerError extends RejectedExecutionException {
     /**
      * Constructs a new runtime exception with the specified detail message. The cause is not

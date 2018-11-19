@@ -24,6 +24,25 @@ import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadPoolExecutor;
 
+/**
+ * Default rejected execution handler that always throws {@link NoRejectedHandlerError}, with a
+ * message containing useful information:
+ * <ul>
+ * <li>
+ * <b>Queue size</b> for explaining why it has been rejected.
+ * </li>
+ * <li>
+ * <b>Executor information</b>, a describer of {@link ThreadPoolExecutor} which calls
+ * {@linkplain ThreadPoolExecutor#toString() the String method} of that class.
+ * </li>
+ * <li>
+ * <b>Thread information</b>, a describer of {@link Runnable} which calls
+ * {@linkplain Runnable#toString() the String method} of that class.
+ * </li>
+ * </ul>
+ * <p>
+ * Defined at {@link com.github.javinator9889.threading.pools.ThreadsPooling#DEFAULT_REJECTED_EXECUTION_HANDLER}.
+ */
 public class DefaultRejectedExecutionHandler implements RejectedExecutionHandler {
     public DefaultRejectedExecutionHandler() {
     }
@@ -41,9 +60,9 @@ public class DefaultRejectedExecutionHandler implements RejectedExecutionHandler
      * @param thread   the runnable task requested to be executed
      * @param executor the executor attempting to execute this task
      *
-     * @throws RejectedExecutionException if there is no remedy
-     * @throws NoRejectedHandlerError     custom exception that is being thrown which inherits from
-     *                                    {@link RejectedExecutionException}.
+     * @throws RejectedExecutionException always
+     * @throws NoRejectedHandlerError     always - custom exception that is being thrown which
+     *                                    inherits from {@link RejectedExecutionException}.
      * @see NoRejectedHandlerError
      */
     @Override

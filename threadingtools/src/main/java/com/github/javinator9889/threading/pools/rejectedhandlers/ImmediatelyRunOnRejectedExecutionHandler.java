@@ -23,7 +23,16 @@ import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadPoolExecutor;
 
+/**
+ * Rejected execution handler that immediately runs the rejected thread - this handler is not
+ * recommended if you need to message between threads and/or there are common dependencies. Also,
+ * notice that this handler will run on {@link com.github.javinator9889.threading.pools.ThreadsPooling}
+ * thread, blocking any other calls.
+ */
 public class ImmediatelyRunOnRejectedExecutionHandler implements RejectedExecutionHandler {
+    /**
+     * Default only available constructor.
+     */
     public ImmediatelyRunOnRejectedExecutionHandler() {
     }
 
@@ -39,8 +48,6 @@ public class ImmediatelyRunOnRejectedExecutionHandler implements RejectedExecuti
      *
      * @param thread   the runnable task requested to be executed
      * @param executor the executor attempting to execute this task
-     *
-     * @throws RejectedExecutionException if there is no remedy
      */
     @Override
     public void rejectedExecution(Runnable thread, ThreadPoolExecutor executor) {

@@ -23,6 +23,12 @@ import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadPoolExecutor;
 
+/**
+ * Handler that does nothing when a thread is rejected - this handler is not recommended to be used
+ * as you will lose information (threads that are not execute will disappear).
+ * <p>
+ * Defined at {@link com.github.javinator9889.threading.pools.ThreadsPooling#NO_ACTION_ON_REJECTED_HANDLER}.
+ */
 public class NoRejectedExecutionHandler implements RejectedExecutionHandler {
     public NoRejectedExecutionHandler() {
     }
@@ -39,8 +45,6 @@ public class NoRejectedExecutionHandler implements RejectedExecutionHandler {
      *
      * @param r        the runnable task requested to be executed
      * @param executor the executor attempting to execute this task
-     *
-     * @throws RejectedExecutionException if there is no remedy
      */
     @Override
     public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {

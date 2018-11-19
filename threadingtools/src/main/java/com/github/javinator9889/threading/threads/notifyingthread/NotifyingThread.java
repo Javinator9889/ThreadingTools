@@ -969,7 +969,6 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
     @Override
     public void uncaughtException(final @NotNull Thread thread,
                                   final @NotNull Throwable exception) {
-        On
         callSubscribedClasses(thread, exception);
     }
 

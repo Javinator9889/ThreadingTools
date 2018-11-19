@@ -621,6 +621,19 @@ public class ThreadsPooling {
     }
 
     /**
+     * Human readable representation of this class.
+     *
+     * @return {@code String} with the representation.
+     */
+    @Override
+    public String toString() {
+        return super.toString() + '{' +
+                "ThreadPoolExecutor: " + mPoolExecutor.toString() + ",\n" +
+                "BlockingQueue: " + mWorkingThreadsQueue.toString() + ",\n" +
+                "RejectedExecutionHandler: " + mRejectedExecutionHandler.toString() + '}';
+    }
+
+    /**
      * Static class for generating a new instance of {@link ThreadsPooling}.
      * <p>
      * This class provides multiple methods for defining a new {@link ThreadsPooling} instance
