@@ -1,0 +1,911 @@
+memberSearchIndex = [{
+    "p": "<Unnamed>",
+    "c": "AbstractPooling",
+    "l": "AbstractPooling()",
+    "url": "%3Cinit%3E()"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "add(Runnable...)",
+    "url": "add(java.lang.Runnable...)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "add(Runnable)",
+    "url": "add(java.lang.Runnable)"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "addOnThreadCompletedListener(OnThreadCompletedListener)",
+    "url": "addOnThreadCompletedListener(com.github.javinator9889.threading.threads.notifyingthread.OnThreadCompletedListener)"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "addOnThreadCompleteListener(OnThreadCompletedListener...)",
+    "url": "addOnThreadCompleteListener(com.github.javinator9889.threading.threads.notifyingthread.OnThreadCompletedListener...)"
+}, {"p": "<Unnamed>", "c": "LambdasPooling", "l": "after()"}, {
+    "p": "<Unnamed>",
+    "c": "NormalPooling",
+    "l": "after()"
+}, {
+    "p": "<Unnamed>",
+    "c": "NotEnoughCapacity",
+    "l": "after()"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "ArgumentParser()",
+    "url": "%3Cinit%3E()"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "ArgumentParser(ArgumentParser)",
+    "url": "%3Cinit%3E(com.github.javinator9889.utils.ArgumentParser)"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "ArgumentParser(int, float)",
+    "url": "%3Cinit%3E(int,float)"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "ArgumentParser(int)",
+    "url": "%3Cinit%3E(int)"
+}, {"p": "<Unnamed>", "c": "AbstractPooling", "l": "before()"}, {
+    "p": "<Unnamed>",
+    "c": "LambdasPooling",
+    "l": "before()"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "build()"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "builder()"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "Builder()",
+    "url": "%3Cinit%3E()"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "callSubscribedClasses(Thread, Throwable)",
+    "url": "callSubscribedClasses(java.lang.Thread,java.lang.Throwable)"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "clear()"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "clone()"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "clone()"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "containsParam(String)",
+    "url": "containsParam(java.lang.String)"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "DEFAULT_CAPACITY"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "DEFAULT_CAPACITY"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "DEFAULT_CORE_THREADS"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "DEFAULT_KEEP_ALIVE"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "DEFAULT_LOAD_FACTOR"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "DEFAULT_MAX_THREADS"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "DEFAULT_QUEUE_CAPACITY"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "DEFAULT_REJECTED_EXECUTION_HANDLER"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "DEFAULT_TIME_UNIT"
+}, {
+    "p": "com.github.javinator9889.threading.pools.rejectedhandlers",
+    "c": "DefaultRejectedExecutionHandler",
+    "l": "DefaultRejectedExecutionHandler()",
+    "url": "%3Cinit%3E()"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "equals(Object)",
+    "url": "equals(java.lang.Object)"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "equals(Object)",
+    "url": "equals(java.lang.Object)"
+}, {
+    "p": "<Unnamed>",
+    "c": "LambdasPooling",
+    "l": "FIRST_DIVIDE"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "get(String)",
+    "url": "get(java.lang.String)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "getActiveThreadsCount()"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "getAsString(String)",
+    "url": "getAsString(java.lang.String)"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "getBoolean(String)",
+    "url": "getBoolean(java.lang.String)"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "getByte(String)",
+    "url": "getByte(java.lang.String)"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "getBytes(String)",
+    "url": "getBytes(java.lang.String)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "getCompletedThreadCount()"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "getConcurrentThreadsRunning()"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "getDouble(String)",
+    "url": "getDouble(java.lang.String)"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "getFloat(String)",
+    "url": "getFloat(java.lang.String)"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "getInt(String)",
+    "url": "getInt(java.lang.String)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "getKeepAliveTime()"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "getKeepAliveTimeWithUnit(TimeUnit)",
+    "url": "getKeepAliveTimeWithUnit(java.util.concurrent.TimeUnit)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "getLargestActiveThreadsRunning()"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "getList(String)",
+    "url": "getList(java.lang.String)"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "getLong(String)",
+    "url": "getLong(java.lang.String)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "getMaximumThreadsRunning()"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "getPoolSize()"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "getRejectedExecutionHandler()"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "getShort(String)",
+    "url": "getShort(java.lang.String)"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "getString(String)",
+    "url": "getString(java.lang.String)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "getThreadCount()"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "getThreadFactory()"
+}, {
+    "p": "<Unnamed>",
+    "c": "AbstractPooling",
+    "l": "getThreadsPooling()"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "getWorkingThreadsQueue()"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "hashCode()"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "hashCode()"
+}, {"p": "<Unnamed>", "c": "LambdasPooling", "l": "HEAVY_OPERATIONS"}, {
+    "p": "<Unnamed>",
+    "c": "LambdasPooling.HeavyLoadClass",
+    "l": "HeavyLoadClass()",
+    "url": "%3Cinit%3E()"
+}, {
+    "p": "<Unnamed>",
+    "c": "LambdasPooling.HeavyLoadClass",
+    "l": "heavyOperation()"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "illegalArgumentException(String, long)",
+    "url": "illegalArgumentException(java.lang.String,long)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "IMMEDIATELY_RUN_ON_REJECTED_HANDLER"
+}, {
+    "p": "com.github.javinator9889.threading.pools.rejectedhandlers",
+    "c": "ImmediatelyRunOnRejectedExecutionHandler",
+    "l": "ImmediatelyRunOnRejectedExecutionHandler()",
+    "url": "%3Cinit%3E()"
+}, {
+    "p": "com.github.javinator9889.utils.errors",
+    "c": "InvalidClassTypeException",
+    "l": "InvalidClassTypeException(String)",
+    "url": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "<Unnamed>",
+    "c": "LambdasPooling.HeavyLoadClass",
+    "l": "isDivisibleBy29()"
+}, {
+    "p": "<Unnamed>",
+    "c": "LambdasPooling.HeavyLoadClass",
+    "l": "isDivisibleBy29(ArgumentParser)",
+    "url": "isDivisibleBy29(com.github.javinator9889.utils.ArgumentParser)"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "isEmpty()"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "isParamHigherThanZero(long)"
+}, {
+    "p": "<Unnamed>",
+    "c": "LambdasPooling",
+    "l": "LambdasPooling()",
+    "url": "%3Cinit%3E()"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "mArguments"
+}, {
+    "p": "<Unnamed>",
+    "c": "LambdasPooling",
+    "l": "MAXF"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "mCoreThreads"
+}, {
+    "p": "<Unnamed>",
+    "c": "LambdasPooling.HeavyLoadClass",
+    "l": "mFirstAttribute"
+}, {"p": "<Unnamed>", "c": "LambdasPooling", "l": "mHeavyLoadClass"}, {
+    "p": "<Unnamed>",
+    "c": "LambdasPooling",
+    "l": "mHeavyOperationResult"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "mKeepAliveTime"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "mMaximumPoolSize"
+}, {
+    "p": "<Unnamed>",
+    "c": "LambdasPooling.HeavyLoadClass",
+    "l": "mMultiplier"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "mPoolExecutor"
+}, {
+    "p": "<Unnamed>",
+    "c": "LambdasPooling",
+    "l": "mPrimeFactorsResult"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "mQueueCapacity"
+}, {
+    "p": "<Unnamed>",
+    "c": "LambdasPooling.HeavyLoadClass",
+    "l": "mRandom"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "mRejectedExecutionHandler"
+}, {
+    "p": "<Unnamed>",
+    "c": "LambdasPooling.HeavyLoadClass",
+    "l": "mSecondAttribute"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "mShouldCallSubscribedClassesAsynchronously"
+}, {
+    "p": "<Unnamed>",
+    "c": "LambdasPooling.HeavyLoadClass",
+    "l": "mSPF"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "mSubscribedClasses"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "mTarget"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "mThreadFactory"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "mThreadNumber"
+}, {
+    "p": "<Unnamed>",
+    "c": "AbstractPooling",
+    "l": "mThreadsPooling"
+}, {
+    "p": "com.github.javinator9889.threading.pools.rejectedhandlers",
+    "c": "RunWhenTasksFinishedOnRejectedHandler",
+    "l": "mTimeout"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "mTimeUnit"
+}, {
+    "p": "com.github.javinator9889.threading.pools.rejectedhandlers",
+    "c": "RunWhenTasksFinishedOnRejectedHandler",
+    "l": "mTimeUnit"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "mWorkingThreadsQueue"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "mWorkingThreadsQueue"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "nextThreadNumber()"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "NO_ACTION_ON_REJECTED_HANDLER"
+}, {
+    "p": "com.github.javinator9889.threading.pools.rejectedhandlers",
+    "c": "NoRejectedExecutionHandler",
+    "l": "NoRejectedExecutionHandler()",
+    "url": "%3Cinit%3E()"
+}, {
+    "p": "com.github.javinator9889.threading.errors",
+    "c": "NoRejectedHandlerError",
+    "l": "NoRejectedHandlerError(String)",
+    "url": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "<Unnamed>",
+    "c": "NormalPooling",
+    "l": "NormalPooling()",
+    "url": "%3Cinit%3E()"
+}, {
+    "p": "<Unnamed>",
+    "c": "NotEnoughCapacity",
+    "l": "NotEnoughCapacity()",
+    "url": "%3Cinit%3E()"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "NotifyingThread()",
+    "url": "%3Cinit%3E()"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "NotifyingThread(OnThreadCompletedListener...)",
+    "url": "%3Cinit%3E(com.github.javinator9889.threading.threads.notifyingthread.OnThreadCompletedListener...)"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "NotifyingThread(Runnable, OnThreadCompletedListener...)",
+    "url": "%3Cinit%3E(java.lang.Runnable,com.github.javinator9889.threading.threads.notifyingthread.OnThreadCompletedListener...)"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "NotifyingThread(Runnable, String, OnThreadCompletedListener...)",
+    "url": "%3Cinit%3E(java.lang.Runnable,java.lang.String,com.github.javinator9889.threading.threads.notifyingthread.OnThreadCompletedListener...)"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "NotifyingThread(Runnable, String)",
+    "url": "%3Cinit%3E(java.lang.Runnable,java.lang.String)"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "NotifyingThread(Runnable)",
+    "url": "%3Cinit%3E(java.lang.Runnable)"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "NotifyingThread(String, OnThreadCompletedListener...)",
+    "url": "%3Cinit%3E(java.lang.String,com.github.javinator9889.threading.threads.notifyingthread.OnThreadCompletedListener...)"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "NotifyingThread(String)",
+    "url": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "NotifyingThread(ThreadGroup, Runnable, OnThreadCompletedListener...)",
+    "url": "%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,com.github.javinator9889.threading.threads.notifyingthread.OnThreadCompletedListener...)"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "NotifyingThread(ThreadGroup, Runnable, String, long, OnThreadCompletedListener...)",
+    "url": "%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String,long,com.github.javinator9889.threading.threads.notifyingthread.OnThreadCompletedListener...)"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "NotifyingThread(ThreadGroup, Runnable, String, long)",
+    "url": "%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String,long)"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "NotifyingThread(ThreadGroup, Runnable, String, OnThreadCompletedListener...)",
+    "url": "%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String,com.github.javinator9889.threading.threads.notifyingthread.OnThreadCompletedListener...)"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "NotifyingThread(ThreadGroup, Runnable, String)",
+    "url": "%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String)"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "NotifyingThread(ThreadGroup, Runnable)",
+    "url": "%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable)"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "NotifyingThread(ThreadGroup, String, OnThreadCompletedListener...)",
+    "url": "%3Cinit%3E(java.lang.ThreadGroup,java.lang.String,com.github.javinator9889.threading.threads.notifyingthread.OnThreadCompletedListener...)"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "NotifyingThread(ThreadGroup, String)",
+    "url": "%3Cinit%3E(java.lang.ThreadGroup,java.lang.String)"
+}, {
+    "p": "<Unnamed>",
+    "c": "AbstractPooling",
+    "l": "onThreadCompletedListener(Thread, Throwable)",
+    "url": "onThreadCompletedListener(java.lang.Thread,java.lang.Throwable)"
+}, {
+    "p": "<Unnamed>",
+    "c": "LambdasPooling",
+    "l": "onThreadCompletedListener(Thread, Throwable)",
+    "url": "onThreadCompletedListener(java.lang.Thread,java.lang.Throwable)"
+}, {
+    "p": "<Unnamed>",
+    "c": "NormalPooling",
+    "l": "onThreadCompletedListener(Thread, Throwable)",
+    "url": "onThreadCompletedListener(java.lang.Thread,java.lang.Throwable)"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "OnThreadCompletedListener",
+    "l": "onThreadCompletedListener(Thread, Throwable)",
+    "url": "onThreadCompletedListener(java.lang.Thread,java.lang.Throwable)"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "OPTIMUM_LOAD_FACTOR_BASED_ON_SIZE"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "paramsNamesSet()"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "paramsValuesSet()"
+}, {"p": "<Unnamed>", "c": "LambdasPooling", "l": "PRIME_FACTORS"}, {
+    "p": "<Unnamed>",
+    "c": "LambdasPooling.HeavyLoadClass",
+    "l": "primeFactors(ArgumentParser)",
+    "url": "primeFactors(com.github.javinator9889.utils.ArgumentParser)"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "putAllParams(ArgumentParser)",
+    "url": "putAllParams(com.github.javinator9889.utils.ArgumentParser)"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "putNullParam(String)",
+    "url": "putNullParam(java.lang.String)"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "putParam(String, Boolean)",
+    "url": "putParam(java.lang.String,java.lang.Boolean)"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "putParam(String, Byte)",
+    "url": "putParam(java.lang.String,java.lang.Byte)"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "putParam(String, byte[])",
+    "url": "putParam(java.lang.String,byte[])"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "putParam(String, Double)",
+    "url": "putParam(java.lang.String,java.lang.Double)"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "putParam(String, Float)",
+    "url": "putParam(java.lang.String,java.lang.Float)"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "putParam(String, Integer)",
+    "url": "putParam(java.lang.String,java.lang.Integer)"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "putParam(String, List<?>)",
+    "url": "putParam(java.lang.String,java.util.List)"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "putParam(String, Long)",
+    "url": "putParam(java.lang.String,java.lang.Long)"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "putParam(String, Object)",
+    "url": "putParam(java.lang.String,java.lang.Object)"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "putParam(String, Short)",
+    "url": "putParam(java.lang.String,java.lang.Short)"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "putParam(String, String)",
+    "url": "putParam(java.lang.String,java.lang.String)"
+}, {
+    "p": "com.github.javinator9889.threading.pools.rejectedhandlers",
+    "c": "DefaultRejectedExecutionHandler",
+    "l": "rejectedExecution(Runnable, ThreadPoolExecutor)",
+    "url": "rejectedExecution(java.lang.Runnable,java.util.concurrent.ThreadPoolExecutor)"
+}, {
+    "p": "com.github.javinator9889.threading.pools.rejectedhandlers",
+    "c": "ImmediatelyRunOnRejectedExecutionHandler",
+    "l": "rejectedExecution(Runnable, ThreadPoolExecutor)",
+    "url": "rejectedExecution(java.lang.Runnable,java.util.concurrent.ThreadPoolExecutor)"
+}, {
+    "p": "com.github.javinator9889.threading.pools.rejectedhandlers",
+    "c": "NoRejectedExecutionHandler",
+    "l": "rejectedExecution(Runnable, ThreadPoolExecutor)",
+    "url": "rejectedExecution(java.lang.Runnable,java.util.concurrent.ThreadPoolExecutor)"
+}, {
+    "p": "com.github.javinator9889.threading.pools.rejectedhandlers",
+    "c": "RunWhenTasksFinishedOnRejectedHandler",
+    "l": "rejectedExecution(Runnable, ThreadPoolExecutor)",
+    "url": "rejectedExecution(java.lang.Runnable,java.util.concurrent.ThreadPoolExecutor)"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "remove(String)",
+    "url": "remove(java.lang.String)"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "removeAllListeners()"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "removeOnThreadCompletedListener(OnThreadCompletedListener)",
+    "url": "removeOnThreadCompletedListener(com.github.javinator9889.threading.threads.notifyingthread.OnThreadCompletedListener)"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "run()"
+}, {
+    "p": "com.github.javinator9889.threading.pools.rejectedhandlers",
+    "c": "RunWhenTasksFinishedOnRejectedHandler",
+    "l": "RunWhenTasksFinishedOnRejectedHandler()",
+    "url": "%3Cinit%3E()"
+}, {
+    "p": "com.github.javinator9889.threading.pools.rejectedhandlers",
+    "c": "RunWhenTasksFinishedOnRejectedHandler",
+    "l": "RunWhenTasksFinishedOnRejectedHandler(long, TimeUnit)",
+    "url": "%3Cinit%3E(long,java.util.concurrent.TimeUnit)"
+}, {
+    "p": "<Unnamed>",
+    "c": "LambdasPooling",
+    "l": "SECON_DIVIDE"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "setExecutable(Consumer<ArgumentParser>, ArgumentParser)",
+    "url": "setExecutable(java.util.function.Consumer,com.github.javinator9889.utils.ArgumentParser)"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "setExecutable(Function<ArgumentParser, ?>, ArgumentParser, AtomicReference)",
+    "url": "setExecutable(java.util.function.Function,com.github.javinator9889.utils.ArgumentParser,java.util.concurrent.atomic.AtomicReference)"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "setExecutable(Runnable)",
+    "url": "setExecutable(java.lang.Runnable)"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "setExecutable(Supplier, AtomicReference)",
+    "url": "setExecutable(java.util.function.Supplier,java.util.concurrent.atomic.AtomicReference)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "setKeepAliveTime(long)"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "setShouldCallSubscribedClassesAsynchronously(boolean)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "shutdownImmediately()"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "shutdownNotWaiting()"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "shutdownWaitTermination()"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "shutdownWaitTermination(long, TimeUnit)",
+    "url": "shutdownWaitTermination(long,java.util.concurrent.TimeUnit)"
+}, {
+    "p": "<Unnamed>",
+    "c": "LambdasPooling.HeavyLoadClass",
+    "l": "sieve()"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "size()"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "start()"
+}, {"p": "<Unnamed>", "c": "AbstractPooling", "l": "target(int)"}, {
+    "p": "<Unnamed>",
+    "c": "AbstractPooling",
+    "l": "test()"
+}, {"p": "<Unnamed>", "c": "LambdasPooling", "l": "test()"}, {
+    "p": "<Unnamed>",
+    "c": "NotEnoughCapacity",
+    "l": "test()"
+}, {
+    "p": "<Unnamed>",
+    "c": "NormalPooling",
+    "l": "testDecreaseConcurrentProcess()"
+}, {"p": "<Unnamed>", "c": "NotEnoughCapacity", "l": "testImmediatelyRun()"}, {
+    "p": "<Unnamed>",
+    "c": "NormalPooling",
+    "l": "testIncreaseConcurrentProcess()"
+}, {"p": "<Unnamed>", "c": "NotEnoughCapacity", "l": "testNoAction()"}, {
+    "p": "<Unnamed>",
+    "c": "NotEnoughCapacity",
+    "l": "testWaitAndRun()"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "THREAD_PREFIX"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "ThreadsPooling(int, int, long, TimeUnit, BlockingQueue<Runnable>, RejectedExecutionHandler)",
+    "url": "%3Cinit%3E(int,int,long,java.util.concurrent.TimeUnit,java.util.concurrent.BlockingQueue,java.util.concurrent.RejectedExecutionHandler)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "ThreadsPooling(int, int, long, TimeUnit, BlockingQueue<Runnable>, ThreadFactory, RejectedExecutionHandler)",
+    "url": "%3Cinit%3E(int,int,long,java.util.concurrent.TimeUnit,java.util.concurrent.BlockingQueue,java.util.concurrent.ThreadFactory,java.util.concurrent.RejectedExecutionHandler)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "ThreadsPooling(int, int, long, TimeUnit, BlockingQueue<Runnable>, ThreadFactory)",
+    "url": "%3Cinit%3E(int,int,long,java.util.concurrent.TimeUnit,java.util.concurrent.BlockingQueue,java.util.concurrent.ThreadFactory)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "ThreadsPooling(int, int, long, TimeUnit, BlockingQueue<Runnable>)",
+    "url": "%3Cinit%3E(int,int,long,java.util.concurrent.TimeUnit,java.util.concurrent.BlockingQueue)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "toString()"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "toString()"
+}, {
+    "p": "com.github.javinator9889.utils",
+    "c": "ArgumentParser",
+    "l": "toString()"
+}, {
+    "p": "com.github.javinator9889.threading.threads.notifyingthread",
+    "c": "NotifyingThread",
+    "l": "uncaughtException(Thread, Throwable)",
+    "url": "uncaughtException(java.lang.Thread,java.lang.Throwable)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "updateConcurrentThreadsRunning(int)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "updateKeepAliveTime(long, TimeUnit)",
+    "url": "updateKeepAliveTime(long,java.util.concurrent.TimeUnit)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "updateKeepAliveTime(long)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "updateMaximumActiveThreads(int)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "updateRejectedExecutionHandler(RejectedExecutionHandler)",
+    "url": "updateRejectedExecutionHandler(java.util.concurrent.RejectedExecutionHandler)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "updateThreadFactory(ThreadFactory)",
+    "url": "updateThreadFactory(java.util.concurrent.ThreadFactory)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling",
+    "l": "WAIT_SHUTDOWN_RUN_TASK_ON_REJECTED_HANDLER"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "withConcurrentThreadsRunning(int)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "withImmediatelyRunRejectedTask()"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "withKeepAliveInDays(long)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "withKeepAliveInHours(long)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "withKeepAliveInMicroseconds(long)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "withKeepAliveInMilliseconds(long)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "withKeepAliveInMinutes(long)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "withKeepAliveInNanoseconds(long)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "withKeepAliveInSeconds(long)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "withMaximumPoolSize(int)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "withNoActionOnTaskRejected()"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "withQueueCapacity(int)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "withRejectedExecutionHandler(RejectedExecutionHandler)",
+    "url": "withRejectedExecutionHandler(java.util.concurrent.RejectedExecutionHandler)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "withRunningTaskWhenAllCompleted()"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "withThread(Runnable)",
+    "url": "withThread(java.lang.Runnable)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "withThreadFactory(ThreadFactory)",
+    "url": "withThreadFactory(java.util.concurrent.ThreadFactory)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "withThreads(Runnable...)",
+    "url": "withThreads(java.lang.Runnable...)"
+}, {
+    "p": "com.github.javinator9889.threading.pools",
+    "c": "ThreadsPooling.Builder",
+    "l": "withTimeUnit(TimeUnit)",
+    "url": "withTimeUnit(java.util.concurrent.TimeUnit)"
+}];

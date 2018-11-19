@@ -543,6 +543,7 @@ public class ThreadsPooling {
      * Gets the keep alive time being used by the {@link ThreadPoolExecutor} in the specified time
      * unit.
      *
+     * @param unit the time unit for wrapping keep alive time.
      * @return {@code long} with the keep alive time.
      */
     public long getKeepAliveTimeWithUnit(@NotNull TimeUnit unit) {

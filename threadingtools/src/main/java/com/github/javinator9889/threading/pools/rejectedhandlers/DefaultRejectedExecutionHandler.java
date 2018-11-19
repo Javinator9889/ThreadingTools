@@ -37,7 +37,7 @@ import java.util.concurrent.ThreadPoolExecutor;
  * </li>
  * <li>
  * <b>Thread information</b>, a describer of {@link Runnable} which calls
- * {@linkplain Runnable#toString() the String method} of that class.
+ * {@linkplain Object#toString() the String method} of that class.
  * </li>
  * </ul>
  * <p>
