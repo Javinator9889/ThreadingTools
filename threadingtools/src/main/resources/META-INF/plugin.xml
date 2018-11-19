@@ -1,0 +1,22 @@
+<idea-plugin>
+    <id>com.github.javinator9889.threadingtools</id>
+    <name>ThreadingTools</name>
+    <vendor email="javialonso007@hotmail.es" url="https://javinator9889.sytes.net/">Javinator9889
+    </vendor>
+
+    <description><![CDATA[
+    Powerful threading tools for speeding up threading process and control.
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+</idea-plugin>
