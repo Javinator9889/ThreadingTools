@@ -1,18 +1,16 @@
 <idea-plugin>
     <id>com.github.javinator9889.threadingtools</id>
-    <name>Plugin display name here</name>
-    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+    <name>ThreadingTools</name>
+    <vendor email="javialonso007@hotmail.es" url="https://javinator9889.sytes.net/">Javinator9889
+    </vendor>
 
     <description><![CDATA[
-    Enter short description for your plugin here.<br>
-    <em>most HTML tags may be used</em>
+    Powerful threading tools for speeding up threading process and control.
     ]]></description>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
-    <!-- uncomment to enable plugin in all products
     <depends>com.intellij.modules.lang</depends>
-    -->
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
