@@ -52,7 +52,6 @@ import java.util.function.Supplier;
  *             public void functionWithHeavyLoad(final ArrayList<Double> params) {
  *                 final Integer value = new Random().nextInt(1337);
  *                 new Thread(new Runnable() {
- *                      @Override
  *                      public void run() {
  *                          double veryBigValue = params.get(0);
  *                          ExampleClass.this.mField = ExampleClass.this.doVeryBigMathCalc(value,
@@ -105,7 +104,7 @@ import java.util.function.Supplier;
  * notifying <b>subscribed classes</b> that the thread has finished with an exception. If you want
  * to use yours, just setup the {@code UncaughtExceptionHandler} with {@link
  * #setUncaughtExceptionHandler(UncaughtExceptionHandler)}.
- * <p><p>
+ * <p>
  * In addition, this class supports <b>async calling</b> for subscribed classes when the threads
  * finishes. Refer to {@linkplain #setShouldCallSubscribedClassesAsynchronously(boolean) async
  * execution docs} for more information.
@@ -464,12 +463,12 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
      * Allocates a new {@code Thread} object so that it has {@code target} as its run object, has
      * the specified {@code name} as its name, and belongs to the thread group referred to by {@code
      * group}, and has the specified <i>stack size</i>.
-     *
-     * <p>This constructor is identical to {@link
-     * #Thread#Thread(ThreadGroup, Runnable, String)} with the exception of the fact that it allows
-     * the thread stack size to be specified.  The stack size is the approximate number of bytes of
-     * address space that the virtual machine is to allocate for this thread's stack.  <b>The effect
-     * of the {@code stackSize} parameter, if any, is highly platform dependent.</b>
+     * <p>
+     * This constructor is identical to {@link #NotifyingThread(ThreadGroup, Runnable, String)} with
+     * the exception of the fact that it allows the thread stack size to be specified.  The stack
+     * size is the approximate number of bytes of address space that the virtual machine is to
+     * allocate for this thread's stack.  <b>The effect of the {@code stackSize} parameter, if any,
+     * is highly platform dependent.</b>
      *
      * <p>On some platforms, specifying a higher value for the
      * {@code stackSize} parameter may allow a thread to achieve greater recursion depth before
@@ -530,12 +529,12 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
      * Allocates a new {@code Thread} object so that it has {@code target} as its run object, has
      * the specified {@code name} as its name, and belongs to the thread group referred to by {@code
      * group}, and has the specified <i>stack size</i>.
-     *
-     * <p>This constructor is identical to {@link
-     * #Thread#Thread(ThreadGroup, Runnable, String)} with the exception of the fact that it allows
-     * the thread stack size to be specified.  The stack size is the approximate number of bytes of
-     * address space that the virtual machine is to allocate for this thread's stack.  <b>The effect
-     * of the {@code stackSize} parameter, if any, is highly platform dependent.</b>
+     * <p>
+     * This constructor is identical to {@link #NotifyingThread(ThreadGroup, Runnable, String)} with
+     * the exception of the fact that it allows the thread stack size to be specified.  The stack
+     * size is the approximate number of bytes of address space that the virtual machine is to
+     * allocate for this thread's stack.  <b>The effect of the {@code stackSize} parameter, if any,
+     * is highly platform dependent.</b>
      *
      * <p>On some platforms, specifying a higher value for the
      * {@code stackSize} parameter may allow a thread to achieve greater recursion depth before
@@ -704,7 +703,8 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
 
     /**
      * Adds new {@linkplain OnThreadCompletedListener listeners} to the list of subscribed classes
-     * at once. For adding just one listener, please refer to {@link #addOnThreadCompletedListener(OnThreadCompletedListener)}.
+     * at once. For adding just one listener, please refer to
+     * {@link #addOnThreadCompletedListener(OnThreadCompletedListener)}.
      *
      * @param listeners {@code array} of listeners that will be called on this thread completion.
      */
@@ -734,10 +734,10 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
     /**
      * Once after the {@link NotifyingThread} is created, this method can be used for setting the
      * {@link Runnable} that will be executed when {@link #start()} is called.
-     * <p><p>
+     * <p>
      * This class uses a {@link Consumer}, which is a type of {@link Function} which accepts
      * <b>one parameter</b> and produces <b>no output</b>. They are {@code void} functions.
-     * <p></p>
+     * <p>
      * The function that will be <b>inside</b> this declaration must follow the following syntax:
      * <pre>{@code
      *         // Class name: ConsumerFunction
@@ -788,10 +788,10 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
     /**
      * Once after the {@link NotifyingThread} is created, this method can be used for setting the
      * {@link Runnable} that will be executed when {@link #start()} is called.
-     * <p><p>
+     * <p>
      * This class uses a {@link Runnable}, which is a type of {@link Function} which accepts
      * <b>no parameters</b> and produces <b>no output</b>. They are {@code void} functions.
-     * <p></p>
+     * <p>
      * The function that will be <b>inside</b> this declaration must follow the following syntax:
      * <pre>{@code
      *         // Class name: RunnableFunction
@@ -829,11 +829,11 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
     /**
      * Once after the {@link NotifyingThread} is created, this method can be used for setting the
      * {@link Runnable} that will be executed when {@link #start()} is called.
-     * <p><p>
+     * <p>
      * This class uses a {@link Supplier}, which is a type of {@link Function} which accepts
      * <b>no parameters</b> and produces <b>an output</b>. Also, this type of functions are very
      * similar to {@link java.util.concurrent.Future}.
-     * <p></p>
+     * <p>
      * The function that will be <b>inside</b> this declaration must follow the following syntax:
      * <pre>{@code
      *         // Class name: SupplierFunction
@@ -877,12 +877,12 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
     /**
      * Once after the {@link NotifyingThread} is created, this method can be used for setting the
      * {@link Runnable} that will be executed when {@link #start()} is called.
-     * <p><p>
+     * <p>
      * This class uses a {@link Function}, which is a type of {@link Function} which accepts
      * <b>one parameter</b> and produces <b>one output</b>. They are very similar to
      * {@link java.util.concurrent.Future}, as those functions receive zero or more args and produce
      * a result.
-     * <p></p>
+     * <p>
      * The function that will be <b>inside</b> this declaration must follow the following syntax:
      * <pre>{@code
      *         // Class name: FunctionFunction
@@ -969,6 +969,7 @@ public class NotifyingThread extends Thread implements Thread.UncaughtExceptionH
     @Override
     public void uncaughtException(final @NotNull Thread thread,
                                   final @NotNull Throwable exception) {
+        On
         callSubscribedClasses(thread, exception);
     }
 

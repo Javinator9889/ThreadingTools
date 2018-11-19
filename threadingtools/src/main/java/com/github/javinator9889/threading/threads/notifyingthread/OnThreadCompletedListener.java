@@ -22,6 +22,46 @@ package com.github.javinator9889.threading.threads.notifyingthread;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * Interface that classes that want to get notified by {@link NotifyingThread} must implement.
+ * <p>
+ * {@code OnThreadCompletedListener} provides an <b>easy access method</b> for classes to get
+ * notified when a {@link NotifyingThread} finishes.
+ * <p>
+ * This <b>listener</b> is useful for both:
+ * <ul>
+ * <li>
+ * <b>Handling finished threads</b>, by using the {@code Runnable} param included
+ * <b>always</b> with this method call. That {@code Runnable} will have the just finished
+ * thread, and cannot be {@code null} (refer to {@link NotifyingThread#run()} for more
+ * information).
+ * </li>
+ * <li>
+ * <b>Managing exceptions</b>: by default, {@link NotifyingThread} manages the
+ * <b>unhandled exceptions</b> by itself, when creating a new instance, assigning the
+ * {@linkplain NotifyingThread#setUncaughtExceptionHandler(Thread.UncaughtExceptionHandler) method
+ * call} to itself, for managing and including the exception when <b>it happens while executing</b>
+ * the thread. Refer to {@link NotifyingThread#uncaughtException(Thread, Throwable)} for more
+ * information.
+ * </li>
+ * </ul>
+ * <p>
+ * At any time you can <b>override</b> the {@linkplain NotifyingThread#setUncaughtExceptionHandler(Thread.UncaughtExceptionHandler)
+ * uncaught exception handler} for setting up a custom behaviour, knowing that, when an exception
+ * occurs, {@link #onThreadCompletedListener(Runnable, Throwable)} will not be called.
+ */
 public interface OnThreadCompletedListener {
+    /**
+     * When a thread finish its execution, if using a {@link NotifyingThread} and the class is
+     * subscribed, this method is called, with the {@code Runnable} which corresponds the just
+     * finished thread, and the {@code Throwable} containing the exception (if any exception has
+     * benn thrown).
+     * <p>
+     * Refer to {@link NotifyingThread#addOnThreadCompletedListener(OnThreadCompletedListener)} for
+     * getting more information about subscribing classes.
+     *
+     * @param thread    the thread that has just finished its execution.
+     * @param exception the exception if happened, else {@code null}.
+     */
     void onThreadCompletedListener(@NotNull final Runnable thread, @Nullable Throwable exception);
 }

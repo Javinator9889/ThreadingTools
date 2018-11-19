@@ -68,7 +68,7 @@ public class ArgumentParser implements Serializable, Cloneable {
     /**
      * Default constructor, using the {@link #DEFAULT_CAPACITY default capacity (=8)} and the {@link
      * #DEFAULT_LOAD_FACTOR default load factor(=0.75)} for generating the {@link HashMap}.
-     * <p><p>
+     * <p>
      * It has the same behaviour as calling {@link #ArgumentParser(int, float)} with {@code
      * ArgumentParser(DEFAULT_CAPACITY, DEFAULT_LOAD_FACTOR)} or {@code ArgumentParser(8, 0.75F)}.
      */
@@ -84,7 +84,7 @@ public class ArgumentParser implements Serializable, Cloneable {
      * hole table must be rewritten completely and duplicated, which consumes lots of resources and
      * it is not as fast as expected on {@link HashMap}). If you do not know exactly the initial
      * capacity, is better to use {@link #ArgumentParser()} with no arguments.
-     * <p><p>
+     * <p>
      * It has the same behaviour as calling {@link #ArgumentParser(int, float)} with {@code
      * ArgumentParser(initialCapacity, OPTIMUM_LOAD_FACTOR_BASED_ON_SIZE)} or {@code
      * ArgumentParser(initialCapacity, 1.0F)}.
