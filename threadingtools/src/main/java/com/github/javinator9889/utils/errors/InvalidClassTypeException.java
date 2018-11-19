@@ -19,6 +19,15 @@
 
 package com.github.javinator9889.utils.errors;
 
+/**
+ * Custom exception called when retrieving data from {@link com.github.javinator9889.utils.ArgumentParser}
+ * and the data type <b>is not the specified one</b>. For example, if you call {@link
+ * com.github.javinator9889.utils.ArgumentParser#getInt(String)} and the value assigned to that
+ * {@code String} is not an {@code Integer} but a {@code ArrayList}, this exception is thrown.
+ * <p>
+ * Also, in the same example as above, if the value is {@code null}, this exception is also thrown
+ * as <b>{@code Integers} cannot be {@code null}</b>.
+ */
 public class InvalidClassTypeException extends RuntimeException {
     /**
      * Constructs a new runtime exception with the specified detail message. The cause is not
