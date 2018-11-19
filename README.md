@@ -24,7 +24,7 @@ defaults:
 + **Default queue capacity**: its default is `100` items.
 
 For more information, please read the 
-**[official documentation](https://javinator9889.github.io/ThreadingTools)**.
+**[official documentation](https://javinator9889.github.io/ThreadingTools/com/github/javinator9889/threading/pools/ThreadsPooling.html)**.
 
 ### `NotifyingThread`
 
@@ -84,7 +84,7 @@ declaring:<br />
 `NotfyingThread` adapts to each function you need to use at every moment.
 
 For more information, please read the 
-**[official documentation](https://javinator9889.github.io/ThreadingTools)**.
+**[official documentation](https://javinator9889.github.io/ThreadingTools/com/github/javinator9889/threading/threads/notifyingthread/package-summary.html)**.
 
 ### `ArgumentParser`
 
@@ -99,7 +99,7 @@ expected values if appending from multiple threads at the same time.
 It is based on **ContentValues**, used in Android, with some *customizations* and new tools.
 
 For more information, please read the 
-**[official documentation](https://javinator9889.github.io/ThreadingTools)**.
+**[official documentation](https://javinator9889.github.io/ThreadingTools/com/github/javinator9889/utils/ArgumentParser.html)**.
 
 
 ## 2. Installation
