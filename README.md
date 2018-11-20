@@ -171,7 +171,11 @@ After [successfully included the library in your project](#2-installation), you 
 + Setup the `NotifyingThreads`, and include them inside the `ThreadsPooling`.
 + Call `ThreadsPooling.start()` method for start executing the threads.
 
-You can see some examples at the [test folder](https://github.com/Javinator9889/ThreadingTools/tree/master/threadingtools/src/test/java), in which all those process and lambda usage are specified.
+You can see some examples at the [examples folder](https://github.com/Javinator9889/ThreadingTools/tree/master/examples), 
+in which all those process and lambda usage are specified.
+
+If you need more information, [read the docs](https://javinator9889.github.io/ThreadingTools/) in
+ which you will find **every method detailed and explained**.
  
 
 ## 4. Contributing
