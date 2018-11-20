@@ -82,45 +82,45 @@ public class CombiningClass implements OnThreadCompletedListener {
         mThreadsPooling.start();
     }
     
-        @Override
-        public void onThreadCompletedListener(@NotNull Thread thread, @Nullable Throwable exception) {
-            // First, we will handle the exception
-            if (exception != null) {
-                System.err.println("Exception thrown by thread: " + thread.getName());
-                exception.printStackTrace();
-            }
-            // Handle finished threads
-            switch (thread.getName()) {
-                case FIRST_DIVIDE:
-                    // First division thread has finished its execution
-                    System.out.println("First division finished");
-                    break;
-                case SECON_DIVIDE:
-                    // Second divide thread has finished its execution
-                    System.out.println("Second division finished");
-                    break;
-                case HEAVY_OPERATIONS:
-                    // Math calculations thread has finished its execution
-                    // We can safely print the result
-                    System.out.println("Heavy operations finished");
-                    System.out.println("Operations result: " + mHeavyOperationResult.get());
-                    break;
-                case PRIME_FACTORS:
-                    // Prime factors thread has finished its execution
-                    // We can safely print the result
-                    System.out.println("Prime factors finished");
-                    System.out.println("Prime factors:");
-                    List<String> result = mPrimeFactorsResult.get();
-                    // First element is a descriptor (in this case)
-                    String firstItem = result.remove(0);
-                    // Print prime factors
-                    System.out.println(firstItem + " | Factors: " + Arrays.toString(result.toArray()));
-                    break;
-                default:
-                    System.err.println("Non contemplated case");
-                    break;
-            }
+    @Override
+    public void onThreadCompletedListener(@NotNull Thread thread, @Nullable Throwable exception) {
+        // First, we will handle the exception
+        if (exception != null) {
+            System.err.println("Exception thrown by thread: " + thread.getName());
+            exception.printStackTrace();
         }
+        // Handle finished threads
+        switch (thread.getName()) {
+            case FIRST_DIVIDE:
+                // First division thread has finished its execution
+                System.out.println("First division finished");
+                break;
+            case SECON_DIVIDE:
+                // Second divide thread has finished its execution
+                System.out.println("Second division finished");
+                break;
+            case HEAVY_OPERATIONS:
+                // Math calculations thread has finished its execution
+                // We can safely print the result
+                System.out.println("Heavy operations finished");
+                System.out.println("Operations result: " + mHeavyOperationResult.get());
+                break;
+            case PRIME_FACTORS:
+                // Prime factors thread has finished its execution
+                // We can safely print the result
+                System.out.println("Prime factors finished");
+                System.out.println("Prime factors:");
+                List<String> result = mPrimeFactorsResult.get();
+                // First element is a descriptor (in this case)
+                String firstItem = result.remove(0);
+                // Print prime factors
+                System.out.println(firstItem + " | Factors: " + Arrays.toString(result.toArray()));
+                break;
+            default:
+                System.err.println("Non contemplated case");
+                break;
+        }
+    }
 
     // An example class that takes too much time to finish its working    
     public class HeavyLoadClass {
